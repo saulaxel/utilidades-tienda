@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1756231996 source:d:\utilidades\impresionlibro\resource.rc
+	"resource.h"
+
+1756231677 d:\utilidades\impresionlibro\resource.h
+	<windows.h>
+
+1756232995 source:d:\utilidades\impresionlibro\main.cpp
+	<windows.h>
+	<cstdlib>
+	<string>
+	<clocale>
+	"resource.h"
+
