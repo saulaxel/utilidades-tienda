@@ -12,3 +12,16 @@
 	<clocale>
 	"resource.h"
 
+1757193832 source:d:\repositorios\utilidades-tienda\impresionlibro\resource.rc
+	"resource.h"
+
+1757194078 d:\repositorios\utilidades-tienda\impresionlibro\resource.h
+	<windows.h>
+
+1757194161 source:d:\repositorios\utilidades-tienda\impresionlibro\main.cpp
+	<windows.h>
+	<cstdlib>
+	<string>
+	<clocale>
+	"resource.h"
+

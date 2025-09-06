@@ -109,20 +109,20 @@ BOOL CALLBACK DialogProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
                     GetDlgItemTextW(hwndDlg, IDC_EDIT_START_PAGE, buffer, ARR_LENGTH(buffer));
                     if (!ParseInt(buffer, &start_page) || start_page <= 0)
                     {
-                        MessageBoxW(hwndDlg, L"Invalid Start Number", L"Error", MB_ICONERROR);
+                        MessageBoxW(hwndDlg, L"Página Inicial inválida", L"Error", MB_ICONERROR);
                         return TRUE;
                     }
 
                     GetDlgItemTextW(hwndDlg, IDC_EDIT_END_PAGE, buffer, sizeof(buffer)/sizeof(*buffer));
                     if (!ParseInt(buffer, &end_page) || end_page <= 0)
                     {
-                        MessageBoxW(hwndDlg, L"Invalid End Number", L"Error", MB_ICONERROR);
+                        MessageBoxW(hwndDlg, L"Página Final inválida", L"Error", MB_ICONERROR);
                         return TRUE;
                     }
 
                     if (start_page >= end_page)
                     {
-                        MessageBoxW(hwndDlg, L"Start Page must be less than End Page", L"Error", MB_ICONERROR);
+                        MessageBoxW(hwndDlg, L"Página Inicial debe ser menor a Página Final", L"Error", MB_ICONERROR);
                         return TRUE;
                     }
 
@@ -136,7 +136,7 @@ BOOL CALLBACK DialogProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
                     {
                         AscendingSequence(front_pages, start_page, end_page - 2);
                         DescendingSequence(back_pages, end_page - 1, start_page);
-                        MessageBoxW(hwndDlg, L"LA ULTIMA PAGINA NO TENDRIA REVERSO. IMPRIMIRLA POR SEPARADO MAS TARDE.", L"Aviso", MB_ICONINFORMATION);
+                        MessageBoxW(hwndDlg, L"LA ÚLTIMA PÁGINA NO TENDRÁ REVERSO. IMPRIMIRLA POR SEPARADO MÁS TARDE.", L"Aviso", MB_ICONINFORMATION);
                         AppendFormattedInt(L"%d", lone_page, end_page);
                     }
 
