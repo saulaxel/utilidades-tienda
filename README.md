@@ -10,5 +10,5 @@ Genera rangos de impresión para imprimir documentos de muchas hojas a doble car
 
 Disponibles como:
 
-    Ejecutable portable que se puede copiar a donde se desee
-    Instalador si se quiere atajos en menú inicio o escritorio.
+- Ejecutable portable que se puede copiar a donde se desee
+- Instalador si se quiere atajos en menú inicio o escritorio.
