@@ -1,0 +1,16 @@
+#include "resource.h"
+
+IDI_MAIN_ICON ICON "favicon.ico"
+
+DLG_MAIN DIALOGEX 6, 5, 194, 49
+
+CAPTION "ALARMA PAPEL FOTOGRÁFICO"
+
+FONT 24, "Tahoma"
+
+STYLE 0x10CE0804
+
+BEGIN
+  CONTROL "&Alarma  PAPEL FOTOGRÁFICO  en 3 Minutos", IDC_BTN_SET_ALARM, "Button", 0x10010000, 5,  5, 184, 15
+  CONTROL "&Cancelar", IDC_BTN_STOP, "Button", 0x10010000, 5, 29, 184, 15
+END

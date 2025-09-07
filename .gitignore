@@ -11,3 +11,5 @@
 *.~pas
 *.~lpr
 Output
+*/bin/Release
+*/bin/Debug

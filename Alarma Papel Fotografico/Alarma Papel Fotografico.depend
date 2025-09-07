@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1757184892 source:d:\utilidades\alarma papel fotografico\main.cpp
+	<windows.h>
+	<mmsystem.h>
+	<winspool.h>
+	<stdio.h>
+	<set>
+	"resource.h"
+
+1757184892 d:\utilidades\alarma papel fotografico\resource.h
+	<windows.h>
+
+1757184890 source:d:\utilidades\alarma papel fotografico\resource.rc
+	"resource.h"
+

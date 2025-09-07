@@ -12,3 +12,12 @@ Disponibles como:
 
 - Ejecutable portable que se puede copiar a donde se desee
 - Instalador si se quiere atajos en menú inicio o escritorio.
+
+## Alarma Papel Fotográfico
+
+Aplicación de alarma para usar cuando colocaste un papel fuera de lo normal en la impresora y necesitas un recordatorio para quitarlo tras terminar de imprimir.
+
+Disponible como
+
+- Zip con programa portatil. Para usar, los arquivos se deben conservar en la misma carpeta.
+- Instalador si se quiere atajos en menú inicio o escritorio.
