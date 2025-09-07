@@ -2,7 +2,7 @@
 Programas para la tienda y el internet.
 
 
-# Impresión Libro
+## Impresión Libro
 
 Genera rangos de impresión para imprimir documentos de muchas hojas a doble cara en impresora SHARP MX M264N. Puede que funcione en otras impresoras.
 
