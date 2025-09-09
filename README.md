@@ -21,3 +21,11 @@ Disponible como
 
 - Zip con programa portatil. Para usar, los arquivos se deben conservar en la misma carpeta.
 - Instalador si se quiere atajos en menú inicio o escritorio.
+
+## Autocompletar Número Movivendor
+
+Rellena el número de teléfono en la versión de escritorio de movivendor para evitar escribirlo manualmente.
+
+Disponible como
+
+- Add-on para Firefox
