@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Autocompletar Nùmero Movivendor",
+    "version": "1.1",
+    "description": "Facilita el Log-In para hacer recargas.",
+    "content_scripts": [
+    {
+        "matches": ["https://web.movivendor.com/login"],
+        "js": ["autocompletar-numero.js"],
+        "run_at": "document_end"
+    }
+    ],
+    "options_ui": {
+        "page": "opciones.html",
+        "open_in_tab": true
+    }
+    ,"permissions": [
+        "https://web.movivendor.com/login",
+        "storage"
+    ]
+}
