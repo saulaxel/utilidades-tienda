@@ -1,0 +1,62 @@
+#ifndef EVICTINGQUEUE_H
+#define EVICTINGQUEUE_H
+
+#include <string>
+#include <deque>
+
+class EvictingQueue
+{
+    public:
+        EvictingQueue(size_t capacity) : m_Capacity(capacity) {}
+
+        void PushAndEvictExcess(std::wstring s)
+        {
+            m_Content.push_front(s);
+
+            if (m_Content.size() > m_Capacity)
+                m_Content.pop_back();
+        }
+
+        bool Contains(std::wstring text)
+        {
+            for (const std::wstring& s: m_Content)
+            {
+                if (s == text)
+                    return true;
+            }
+            return false;
+        }
+
+        std::wstring &operator[](size_t i)
+        {
+            return m_Content[i];
+        }
+
+        void setCapacity(size_t capacity)
+        {
+            m_Capacity = capacity;
+        }
+
+        size_t Capacity() const
+        {
+            return m_Capacity;
+        }
+
+        size_t Size() const
+        {
+            return m_Content.size();
+        }
+
+        std::deque<std::wstring>::iterator begin() { return m_Content.begin(); }
+        std::deque<std::wstring>::iterator end() { return m_Content.end(); }
+
+        std::deque<std::wstring>::const_iterator begin() const { return m_Content.begin(); }
+        std::deque<std::wstring>::const_iterator end() const { return m_Content.end(); }
+
+    private:
+        std::deque<std::wstring> m_Content;
+        size_t m_Capacity;
+};
+
+#endif // EVICTINGQUEUE_H
+
