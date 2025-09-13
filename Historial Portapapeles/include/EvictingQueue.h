@@ -4,12 +4,15 @@
 #include <string>
 #include <deque>
 
+using std::deque;
+using std::wstring;
+
 class EvictingQueue
 {
     public:
         EvictingQueue(size_t capacity) : m_Capacity(capacity) {}
 
-        void PushAndEvictExcess(std::wstring s)
+        void PushAndEvictExcess(wstring s)
         {
             m_Content.push_front(s);
 
@@ -17,11 +20,11 @@ class EvictingQueue
                 m_Content.pop_back();
         }
 
-        bool Contains(std::wstring text)
+        bool Contains(wstring text)
         {
-            for (const std::wstring& s: m_Content)
+            for (deque<wstring>::const_iterator it = m_Content.begin(); it != m_Content.end(); ++it)
             {
-                if (s == text)
+                if (*it == text)
                     return true;
             }
             return false;

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1757795991 source:d:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+	<windows.h>
+	<shellapi.h>
+	<tchar.h>
+	<vector>
+	<string>
+	"EvictingQueue.h"
+
