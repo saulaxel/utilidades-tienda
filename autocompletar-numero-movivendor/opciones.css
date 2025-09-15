@@ -36,6 +36,12 @@ label {
   color: var(--primary-green);
 }
 
+#estado-guardado {
+  display: block;
+  color: var(--primary-blue);
+  margin-top: 8px;
+}
+
 input[type="tel"] {
   width: 100%;
   padding: 10px;

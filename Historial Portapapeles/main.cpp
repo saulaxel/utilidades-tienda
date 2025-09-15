@@ -118,6 +118,7 @@ void InitClipboardAPI()
 
 void InitTrayIcon(HWND hwnd, NOTIFYICONDATAW &nid)
 {
+    std::cout << "Init Tray Icon START" << std::endl;
     nid.cbSize = sizeof(nid);
     nid.hWnd = hwnd;
     nid.uID = 1;
@@ -126,6 +127,7 @@ void InitTrayIcon(HWND hwnd, NOTIFYICONDATAW &nid)
     nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wcsncpy(nid.szTip, L"Historial de Portapapeles", ARRAY_LENGTH(nid.szTip));
     Shell_NotifyIconW(NIM_ADD, &nid);
+    std::cout << "Init Tray Icon END" << std::endl;
 }
 
 void RemoveTrayIcon(NOTIFYICONDATAW &nid)
@@ -135,15 +137,42 @@ void RemoveTrayIcon(NOTIFYICONDATAW &nid)
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-    AppState *appState = (AppState *)lParam;
+    AppState *appState = reinterpret_cast<AppState *>(
+         GetWindowLongPtr(hwnd, GWLP_USERDATA)
+    );
+
+    std::cout << "WndProc " << msg << std::endl;
+    std::cout << "AppState address: " << appState << std::endl;
+
     switch(msg)
     {
+    case WM_NCCREATE:
+        {
+            // The creation param is only received on creation
+            CREATESTRUCT *cs = reinterpret_cast<CREATESTRUCT *>(lParam);
+            appState = reinterpret_cast<AppState *>(cs->lpCreateParams);
+            std::cout << "WM_NCCREATE" << std::endl;
+
+            // Store the param for future calls of WndProc
+            SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(appState));
+            return TRUE;
+        }
+        break;
+
+
     case WM_CREATE:
+        std::cout << "WM_CREATE" << std::endl;
         InitClipboardAPI();
         if (pAddClipboardFormatListener)
+        {
+            std::cout << "Windows Vista+ listener" << std::endl;
             pAddClipboardFormatListener(hwnd);
+        }
         else
+        {
+            std::cout << "Windows XP- listener" << std::endl;
             appState->hNextViewer = SetClipboardViewer(hwnd);
+        }
 
         RegisterHotKey(hwnd, HOTKEY_ID, MOD_WIN, 'V');
         InitTrayIcon(hwnd, appState->nid);
@@ -152,6 +181,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_CLIPBOARDUPDATE:
     case WM_DRAWCLIPBOARD:
         {
+            std::cout << "WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD" << std::endl;
             wstring text = GetSystemClipboardText();
             AddToHistory(text, appState->ClipHistory);
             UpdateListBox(appState->hListDialog, appState->ClipHistory);
@@ -161,6 +191,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_CHANGECBCHAIN:
+        std::cout << "WM_CHANGECBCHAIN" << std::endl;
         if ((HWND)wParam == appState->hNextViewer)
             appState->hNextViewer = (HWND)lParam;
         else if (appState->hNextViewer)
@@ -168,11 +199,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_HOTKEY:
+        std::cout << "WM_HOTKEY" << std::endl;
         if (wParam == HOTKEY_ID)
             ShowHistoryDialog(GetModuleHandle(NULL), appState->hListDialog, appState->ClipHistory);
         break;
 
     case WM_COMMAND:
+        std::cout << "WM_COMAND" << std::endl;
         if (HIWORD(wParam) == LBN_DBLCLK && (HWND)lParam == appState->hListDialog)
         {
             int idx = SendMessage(appState->hListDialog, LB_GETCURSEL, 0, 0);
@@ -195,11 +228,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_TRAY_ICON_CLICK:
+        std::cout << "WM_TRAY_ICON_CLIC" << std::endl;
         if (LOWORD(lParam) == WM_LBUTTONDBLCLK)
             ShowHistoryDialog(GetModuleHandle(NULL), appState->hListDialog, appState->ClipHistory);
         break;
 
     case WM_DESTROY:
+        std::cout << "WM_DESTROY" << std::endl;
         if (pRemoveClipboardFormatListener)
             pRemoveClipboardFormatListener(hwnd);
         else
@@ -212,6 +247,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     default:
         return DefWindowProc(hwnd, msg, wParam, lParam);
     }
+    std::cout << "Finished WndProc" << std::endl;
     return 0;
 }
 
@@ -229,14 +265,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
 
     AppState appState = {NULL, NULL, {}, EvictingQueue(DEFAULT_CLIPBOARD_HISTORY_SIZE)};
 
-    std::cout << "test before CreateWindow" << std::endl;
-    HWND hwndMain = CreateWindow(
+    std::cout << "Before CreateWindow" << std::endl;
+    HWND hwndMain = CreateWindowEx(
+        0,
         wc.lpszClassName, _T("Historial de Portapapeles"),
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
         NULL, NULL, hInstance, &appState);
-    std::cerr << "CreateWindow failed, error: " << GetLastError() << std::endl;
-    std::cout << "test after CreateWindow" << std::endl;
+    std::cout << "After CreateWindow" << std::endl;
 
     ShowWindow(hwndMain, SW_HIDE);
 

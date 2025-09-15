@@ -1,5 +1,17 @@
-console.log("v4");
+// La forma en que el sitio web funciona actualmente es la siguiente:
+// - Aparece un input para escribir el puntoDeVenta y hay que presionar logIn.
+//   La página procede a comprobar que el puntoDeVenta sea válido y, en caso de serlo,
+//   procede al siguiente punto.
+// - El input para puntoDeVenta desaparece y en su lugar aparece un input para la contraseña.
+//   Dicha contraseña suele aparecer ya rellenada por el navegador, por lo que no hace falta escribirla.
+//   Lo que sí falta hacer es volver a presionar logIn. Esperar un tiempo fijo no parece muy efectivo, por lo
+//   que en su lugar se usa un MutationObserver para identificar cuando aparece el campo para la contraseña
 
+console.log('autocompletar-numero');
+
+// #####
+// Paso 1, obtener el puntoDeVenta almacenado en firefox y escribirlo en el campo puntoDeVenta
+// #####
 async function obtenerPuntoVenta() {
   // Wait for storage values to load
   const data = await browser.storage.local.get(["puntoDeVenta"]);
@@ -11,27 +23,57 @@ async function obtenerPuntoVenta() {
   return data.puntoDeVenta;
 }
 
-obtenerPuntoVenta().then(strPuntoDeVenta => {
-    const autocompletarNumero = () => {
-        const puntoDeVenta = document.getElementById("in-puntoVenta");
-        const botonLogIn = document.getElementById("logIn");
-        
-        if (!puntoDeVenta || !botonLogIn)
-            return;
-        
-        puntoDeVenta.value = strPuntoDeVenta;
+const autocompletarPuntoDeVenta = (strPuntoDeVenta) => {
+	const puntoDeVenta = document.getElementById("in-puntoVenta");
+	
+	if (!puntoDeVenta)
+		return;
+	
+	puntoDeVenta.value = strPuntoDeVenta;
+};
 
-        if (strPuntoDeVenta.length !== 10)
-            return;
-        
-        setTimeout(() => {
-            botonLogIn.click();
-        }, 500);        
+const presionarLogIn = () => {
+	const botonLogIn = document.getElementById("logIn");
+	
+	if (!botonLogIn)
+		return;
+	
+	botonLogIn.click();
+};
+
+obtenerPuntoVenta().then(strPuntoDeVenta => {
+    const procesoLogin = () => {
+		// strPuntoDeVenta como "closure" permite usar esta función como event
+		// callback. Esta función anidada existe por esa misma razon
+        autocompletarPuntoDeVenta(strPuntoDeVenta);
+		
+		if (strPuntoDeVenta.length == 10) {
+			setTimeout(presionarLogIn, 500);
+			registrarObservadorDOM();
+		}
     };
 
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", autocompletarNumero);
+        document.addEventListener("DOMContentLoaded", procesoLogin);
     } else {
-        autocompletarNumero();
+        procesoLogin();
     }
 });
+
+// #####
+// Paso 2. Volver a presionar login cuando aparezca el campo para la contraseña
+// #####
+const registrarObservadorDOM = (_, obs) => {
+	const observadorDOM = new MutationObserver((_, obs) => {
+		const pass = document.getElementById("in-password");
+		if (pass) {
+			presionarLogIn();
+			obs.disconnect();
+		}
+	});
+	
+	observadorDOM.observe(document.body, {
+		childList: true,
+		subtree: true
+	});
+};
