@@ -17,15 +17,20 @@ Disponibles como:
 
 Aplicación de alarma para usar cuando colocaste un papel fuera de lo normal en la impresora y necesitas un recordatorio para quitarlo tras terminar de imprimir.
 
-Disponible como
+Disponible como:
 
 - Zip con programa portatil. Para usar, los arquivos se deben conservar en la misma carpeta.
 - Instalador si se quiere atajos en menú inicio o escritorio.
 
-## Autocompletar Número Movivendor
+## Inicio Sesión Movivendor
 
-Rellena el número de teléfono en la versión de escritorio de movivendor para evitar escribirlo manualmente.
+Realiza el proceso de inicio de sesión en Movivendor de forma automática, ahorrando el paso de escribir los datos a mano.
 
-Disponible como
+
+Disponible como:
 
 - Add-on para Firefox
+
+Una vez que se instale esta extensión, se requiere que el usuario escriba su Punto de Venta (número de teléfono) en:
+
+    Menú > Complementos y Temas > Extensiones > Menú (ubicar esta extensión y dar click en sus 3 puntos) > Preferencias
