@@ -7,14 +7,14 @@ browser.storage.local.get('puntoDeVenta').then(data => {
 });
 
 document.getElementById('botonGuardar').addEventListener('click', () => {
-  const intPuntoDeVenta = parseInt(document.getElementById('puntoDeVenta').value, 10);
-  const estadoGuardado = document.getElementById("estado-guardado");
-  
-  if (isNaN(intPuntoDeVenta)) {
-    alert("Favor de ingresar un número válido.");
-    return;
-  }
+    const intPuntoDeVenta = parseInt(document.getElementById('puntoDeVenta').value, 10);
+    const estadoGuardado = document.getElementById("estado-guardado");
 
-  browser.storage.local.set({ puntoDeVenta: intPuntoDeVenta.toString() });
-  estadoGuardado.innerText = `El número ${intPuntoDeVenta} se ha guardado!`;
+    if (isNaN(intPuntoDeVenta)) {
+        alert("Favor de ingresar un número válido.");
+        return;
+    }
+
+    browser.storage.local.set({ puntoDeVenta: intPuntoDeVenta.toString() });
+    estadoGuardado.innerText = `El número ${intPuntoDeVenta} se ha guardado!`;
 });

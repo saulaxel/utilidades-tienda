@@ -4,11 +4,11 @@
     "version": "1.2",
     "description": "Facilita el Log-In para hacer recargas.",
     "content_scripts": [
-    {
-        "matches": ["https://web.movivendor.com/login"],
-        "js": ["autocompletar-numero.js"],
-        "run_at": "document_end"
-    }
+        {
+            "matches": ["https://web.movivendor.com/login"],
+            "js": ["autocompletar-numero.js"],
+            "run_at": "document_end"
+        }
     ],
     "options_ui": {
         "page": "opciones.html",

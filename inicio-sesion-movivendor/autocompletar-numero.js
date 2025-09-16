@@ -13,44 +13,44 @@ console.log('autocompletar-numero');
 // Paso 1, obtener el puntoDeVenta almacenado en firefox y escribirlo en el campo puntoDeVenta
 // #####
 async function obtenerPuntoVenta() {
-  // Wait for storage values to load
-  const data = await browser.storage.local.get(["puntoDeVenta"]);
+    // Wait for storage values to load
+    const data = await browser.storage.local.get(["puntoDeVenta"]);
 
-  if (typeof data.puntoDeVenta === "undefined") {
-      return "55";
-  }
-  
-  return data.puntoDeVenta;
+    if (typeof data.puntoDeVenta === "undefined") {
+        return "55";
+    }
+
+    return data.puntoDeVenta;
 }
 
 const autocompletarPuntoDeVenta = (strPuntoDeVenta) => {
-	const puntoDeVenta = document.getElementById("in-puntoVenta");
-	
-	if (!puntoDeVenta)
-		return;
-	
-	puntoDeVenta.value = strPuntoDeVenta;
+    const puntoDeVenta = document.getElementById("in-puntoVenta");
+
+    if (!puntoDeVenta)
+        return;
+
+    puntoDeVenta.value = strPuntoDeVenta;
 };
 
 const presionarLogIn = () => {
-	const botonLogIn = document.getElementById("logIn");
-	
-	if (!botonLogIn)
-		return;
-	
-	botonLogIn.click();
+    const botonLogIn = document.getElementById("logIn");
+
+    if (!botonLogIn)
+        return;
+
+    botonLogIn.click();
 };
 
 obtenerPuntoVenta().then(strPuntoDeVenta => {
     const procesoLogin = () => {
-		// strPuntoDeVenta como "closure" permite usar esta función como event
-		// callback. Esta función anidada existe por esa misma razon
+        // strPuntoDeVenta como "closure" permite usar esta función como event
+        // callback. Esta función anidada existe por esa misma razon
         autocompletarPuntoDeVenta(strPuntoDeVenta);
-		
-		if (strPuntoDeVenta.length == 10) {
-			setTimeout(presionarLogIn, 500);
-			registrarObservadorDOM();
-		}
+
+        if (strPuntoDeVenta.length == 10) {
+            setTimeout(presionarLogIn, 500);
+            registrarObservadorDOM();
+        }
     };
 
     if (document.readyState === "loading") {
@@ -64,16 +64,16 @@ obtenerPuntoVenta().then(strPuntoDeVenta => {
 // Paso 2. Volver a presionar login cuando aparezca el campo para la contraseña
 // #####
 const registrarObservadorDOM = (_, obs) => {
-	const observadorDOM = new MutationObserver((_, obs) => {
-		const pass = document.getElementById("in-password");
-		if (pass) {
-			presionarLogIn();
-			obs.disconnect();
-		}
-	});
-	
-	observadorDOM.observe(document.body, {
-		childList: true,
-		subtree: true
-	});
+    const observadorDOM = new MutationObserver((_, obs) => {
+        const pass = document.getElementById("in-password");
+        if (pass) {
+            presionarLogIn();
+            obs.disconnect();
+        }
+    });
+
+    observadorDOM.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 };
