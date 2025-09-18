@@ -34,3 +34,10 @@ Disponible como:
 Una vez que se instale esta extensión, se requiere que el usuario escriba su Punto de Venta (número de teléfono) en:
 
     Menú > Complementos y Temas > Extensiones > Menú (ubicar esta extensión y dar click en sus 3 puntos) > Preferencias
+
+
+## Historial Portapapeles
+
+Applicación que busca proveer parte de la funcionalidad de Windows 10 en Windows previos.
+
+Iniciar la aplicación para que empiece a guardar una lista de lo que copias. Presionar Windows + V para abrir el historial y pegar el objeto que elijas.

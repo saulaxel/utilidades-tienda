@@ -1,12 +1,11 @@
 #ifndef EVICTINGQUEUE_H
 #define EVICTINGQUEUE_H
 
-#include <string>
 #include <deque>
 
 using std::deque;
-using std::wstring;
 
+template <typename T>
 class EvictingQueue
 {
     public:
@@ -14,7 +13,11 @@ class EvictingQueue
 
         EvictingQueue(size_t capacity) : m_Capacity(capacity) {}
 
-        void PushAndEvictExcess(wstring s)
+        /**
+         * Inserts s and evicts last element if full.
+         * @param s Element to insert
+         */
+        void PushAndEvictExcess(T s)
         {
             m_Content.push_front(s);
 
@@ -22,29 +25,29 @@ class EvictingQueue
                 m_Content.pop_back();
         }
 
-        size_t IndexOf(wstring text)
+        size_t IndexOf(T item)
         {
-            for (deque<wstring>::const_iterator it = m_Content.begin(); it != m_Content.end(); ++it)
+            for (typename deque<T>::const_iterator it = m_Content.begin(); it != m_Content.end(); ++it)
             {
-                if (*it == text)
+                if (*it == item)
                     return it - m_Content.begin();
             }
             return NotFound;
         }
 
-        bool Contains(wstring text)
+        bool Contains(T item)
         {
-            return IndexOf(text) != NotFound;
+            return IndexOf(item) != NotFound;
         }
 
-        std::wstring &operator[](size_t i)
+        T &operator[](size_t i)
         {
             if (i >= m_Content.size())
                 throw std::out_of_range("Index out of range");
             return m_Content[i];
         }
 
-        const std::wstring &operator[](size_t i) const
+        const T &operator[](size_t i) const
         {
             if (i >= m_Content.size())
                 throw std::out_of_range("Index out of range");
@@ -53,6 +56,10 @@ class EvictingQueue
 
         void setCapacity(size_t capacity)
         {
+            if (capacity < m_Content.size())
+            {
+                throw std::out_of_range("More elements than new capacity");
+            }
             m_Capacity = capacity;
         }
 
@@ -66,14 +73,14 @@ class EvictingQueue
             return m_Content.size();
         }
 
-        std::deque<std::wstring>::iterator begin() { return m_Content.begin(); }
-        std::deque<std::wstring>::iterator end() { return m_Content.end(); }
+        typename deque<T>::iterator begin() { return m_Content.begin(); }
+        typename deque<T>::iterator end()   { return m_Content.end(); }
 
-        std::deque<std::wstring>::const_iterator begin() const { return m_Content.begin(); }
-        std::deque<std::wstring>::const_iterator end() const { return m_Content.end(); }
+        typename deque<T>::const_iterator begin() const { return m_Content.begin(); }
+        typename deque<T>::const_iterator end()   const { return m_Content.end(); }
 
     private:
-        std::deque<std::wstring> m_Content;
+        deque<T> m_Content;
         size_t m_Capacity;
 };
 

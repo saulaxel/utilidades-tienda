@@ -20,13 +20,17 @@
 #include <tchar.h>
 #include <commctrl.h>
 #include <vector>
+using std::vector;
 #include <string>
+using std::wstring;
+using std::string;
 #include <iostream>
+using std::wcout;
+using std::endl;
 #include <algorithm>
 
 #include "EvictingQueue.h"
-
-using std::wstring;
+#include "ClipItem.h"
 
 #ifndef WM_CLIPBOARDUPDATE
 #define WM_CLIPBOARDUPDATE 0x031D
@@ -39,13 +43,14 @@ static const UINT WM_TRAY_ICON_CLICK = (WM_USER + 1);
 static const UINT HOTKEY_ID = 1;
 static const UINT APP_WIDTH = 150;
 static const UINT APP_HEIGHT = 300;
+static const ClipItem EMPTY_CLIP_ITEM( wstring(L"") );
 
 struct AppState {
     HWND hwndMain;
     HWND hNextViewer;
     HWND hwndHistDialog;
     NOTIFYICONDATAW nid;
-    EvictingQueue ClipHistory;
+    EvictingQueue<ClipItem> ClipHistory;
     HWND hwndPrevWindow;
 };
 
@@ -63,8 +68,8 @@ LRESULT CALLBACK HistoryDialogProc(HWND hwndHistDialog, UINT msg, WPARAM wparam,
 LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // ##### System clipboard #####
-wstring GetSystemClipboardText();
-bool SetSystemClipboardText(const std::wstring &text);
+ClipItem GetSystemClipItem();
+bool SetSystemClipboard(const ClipItem &item);
 void PasteSystemClipboardText();
 
 // ##### GUI Dialog #####
@@ -72,19 +77,22 @@ HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState);
 void ShowHistoryDialog(HWND hwndMain, HWND hwndHistDialog);
 void SelectHistoryDialogIndex(HWND hwndHistDialog, int index);
 void HideHistoryDialog(HWND hwndMain);
-void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue &ClipHistory);
+void UpdateHistoryDialog(
+    HWND hwndHistDialog,
+    const EvictingQueue<ClipItem> &ClipHistory
+);
 void ManageHistoryDialogItemSelected(
     HWND hwndMain,
     HWND hwndHistDialog,
-    EvictingQueue &ClipHistory,
+    EvictingQueue<ClipItem> &ClipHistory,
     HWND hwndPrevWindow
 );
 void PositionHistoryDialogOnMouse(HWND hwndMain, HWND hwndHistoryDialog);
 
 
 // ##### In memory History #####
-void AddToHistory(const wstring &text, EvictingQueue &ClipHistory);
-void SetIndexAsFirstHistoryItem(EvictingQueue &ClipHistory, size_t idx);
+void AddToHistory(EvictingQueue<ClipItem> &ClipHistory, const ClipItem &item);
+void SetIndexAsFirstHistoryItem(EvictingQueue<ClipItem> &ClipHistory, size_t idx);
 
 // ##### Clipboard Listener #####
 void InitClipboardAPI();
@@ -110,12 +118,12 @@ LRESULT CALLBACK HistoryDialogProc(
 )
 {
     AppState *appState = reinterpret_cast<AppState *>(dwRefData);
-    std::wcout << "HistoryDialogProc " << msg << std::endl;
+    wcout << "HistoryDialogProc " << msg << endl;
 
     switch (msg)
     {
     case WM_KEYDOWN:
-        std::wcout << "WM_KEYDOWN" << std::endl;
+        wcout << "WM_KEYDOWN" << endl;
         if (wParam == VK_RETURN)
         {
             ManageHistoryDialogItemSelected(
@@ -134,7 +142,7 @@ LRESULT CALLBACK HistoryDialogProc(
         break;
 
     case WM_LBUTTONDBLCLK:
-        std::wcout << "WM_LBUTTONDBLCLK" << std::endl;
+        wcout << "WM_LBUTTONDBLCLK" << endl;
         ManageHistoryDialogItemSelected(
             appState->hwndMain,
             hwndHistDialog,
@@ -165,8 +173,8 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
          GetWindowLongPtr(hwndMain, GWLP_USERDATA)
     );
 
-    std::wcout << "WndProc " << msg << std::endl;
-    std::wcout << "AppState address: " << appState << std::endl;
+    wcout << "WndProc " << msg << endl;
+    wcout << "AppState address: " << appState << endl;
 
     switch(msg)
     {
@@ -175,7 +183,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         // The creation param is only received on creation
         CREATESTRUCT *cs = reinterpret_cast<CREATESTRUCT *>(lParam);
         appState = reinterpret_cast<AppState *>(cs->lpCreateParams);
-        std::wcout << "WM_NCCREATE" << std::endl;
+        wcout << "WM_NCCREATE" << endl;
 
         // Store the param for future calls
         SetWindowLongPtr(
@@ -188,22 +196,22 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
 
 
     case WM_CREATE:
-        std::wcout << "WM_CREATE" << std::endl;
+        wcout << "WM_CREATE" << endl;
         InitClipboardAPI();
         if (pAddClipboardFormatListener)
         {
-            std::wcout << "Windows Vista+ listener" << std::endl;
+            wcout << "Windows Vista+ listener" << endl;
             pAddClipboardFormatListener(hwndMain);
         }
         else
         {
-            std::wcout << "Windows XP- listener" << std::endl;
+            wcout << "Windows XP- listener" << endl;
             appState->hNextViewer = SetClipboardViewer(hwndMain);
         }
 
         RegisterHotKey(hwndMain, HOTKEY_ID, MOD_WIN, 'V');
         appState->nid = InitTrayIcon(hwndMain);
-        AddToHistory(GetSystemClipboardText(), appState->ClipHistory);
+        AddToHistory(appState->ClipHistory, GetSystemClipItem());
         appState->hwndHistDialog = CreateHistoryDialog(
             hwndMain,
             GetModuleHandle(NULL),
@@ -214,17 +222,17 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_CLIPBOARDUPDATE:
     case WM_DRAWCLIPBOARD:
         {
-            std::wcout << "WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD" << std::endl;
-            wstring text = GetSystemClipboardText();
-            std::wcout << "Glipboard Text is: " << text << std::endl;
-            AddToHistory(text, appState->ClipHistory);
+            wcout << "WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD" << endl;
+            ClipItem item = GetSystemClipItem();
+            //wcout << "Glipboard Text is: " << item << endl;
+            AddToHistory(appState->ClipHistory, item);
 
-            std::wcout << "Full history:" << std::endl;
-            for (deque<wstring>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
+            wcout << "Full history:" << endl;
+            for (deque<ClipItem>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
             {
-                std::wcout << "- " << *it << std::endl;
+                // wcout << "- " << *it << endl;
             }
-            std::wcout << std::endl;
+            wcout << endl;
 
             UpdateHistoryDialog(appState->hwndHistDialog, appState->ClipHistory);
             if (msg == WM_DRAWCLIPBOARD && appState->hNextViewer)
@@ -233,7 +241,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_CHANGECBCHAIN:
-        std::wcout << "WM_CHANGECBCHAIN" << std::endl;
+        wcout << "WM_CHANGECBCHAIN" << endl;
         if (reinterpret_cast<HWND>(wParam) == appState->hNextViewer)
             appState->hNextViewer = (HWND)lParam;
         else if (appState->hNextViewer)
@@ -241,7 +249,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_HOTKEY:
-        std::wcout << "WM_HOTKEY" << std::endl;
+        wcout << "WM_HOTKEY" << endl;
         if (wParam == HOTKEY_ID)
         {
             appState->hwndPrevWindow = GetForegroundWindow();
@@ -251,11 +259,11 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_KEYDOWN:
-        std::wcout << "WM_KEYDOWN" << std::endl;
+        wcout << "WM_KEYDOWN" << endl;
         break;
 
     case WM_TRAY_ICON_CLICK:
-        std::wcout << "WM_TRAY_ICON_CLIC" << std::endl;
+        wcout << "WM_TRAY_ICON_CLIC" << endl;
         if (LOWORD(lParam) == WM_LBUTTONDBLCLK)
         {
             appState->hwndPrevWindow = GetForegroundWindow();
@@ -280,7 +288,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     break;
 
     case WM_DESTROY:
-        std::wcout << "WM_DESTROY" << std::endl;
+        wcout << "WM_DESTROY" << endl;
         if (pRemoveClipboardFormatListener)
             pRemoveClipboardFormatListener(hwndMain);
         else
@@ -293,7 +301,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     default:
         return DefWindowProc(hwndMain, msg, wParam, lParam);
     }
-    std::wcout << "Finished WndProc" << std::endl;
+    wcout << "Finished WndProc" << endl;
     return 0;
 }
 
@@ -309,9 +317,16 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     wc.lpszClassName = _T("ClipboardHistoryHiddenWnd");
     RegisterClass(&wc);
 
-    AppState appState = {NULL, NULL, NULL, {}, EvictingQueue(DEFAULT_CLIPBOARD_HISTORY_SIZE), 0};
+    AppState appState = {
+        NULL,
+        NULL,
+        NULL,
+        {},
+        EvictingQueue<ClipItem>(DEFAULT_CLIPBOARD_HISTORY_SIZE),
+        0
+    };
 
-    std::wcout << "Before CreateWindow" << std::endl;
+    wcout << "Before CreateWindow" << endl;
     HWND hwndMain = CreateWindowEx(
         WS_EX_TOPMOST | WS_EX_NOACTIVATE,
         wc.lpszClassName, _T("Historial de Portapapeles"),
@@ -319,7 +334,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
         CW_USEDEFAULT, CW_USEDEFAULT, APP_WIDTH, APP_HEIGHT,
         NULL, NULL, hInstance, &appState
     );
-    std::wcout << "After CreateWindow" << std::endl;
+    wcout << "After CreateWindow" << endl;
 
     appState.hwndMain = hwndMain;
     ShowWindow(hwndMain, SW_HIDE);
@@ -339,27 +354,75 @@ END_SUPPRESS_WARNING
 
 // ##### System clipboard #####
 
-wstring GetSystemClipboardText()
+ClipItem GetSystemClipItem()
 {
     if (!OpenClipboard(NULL))
-        return L"";
+        return EMPTY_CLIP_ITEM;
 
-    HANDLE hData = GetClipboardData(CF_UNICODETEXT);
+    const UINT cfRTF = RegisterClipboardFormat(L"Rich Text Format");
+
+    ClipItem result = EMPTY_CLIP_ITEM;
+    ClipItem::Type itemType;
+
+
+    HANDLE hData;
+    if (IsClipboardFormatAvailable(CF_UNICODETEXT))
+    {
+        itemType = ClipItem::TYPE_TEXT;
+        hData = GetClipboardData(CF_UNICODETEXT)
+    }
+    else if (IsClipboardFormatAvailable(CF_DIB))
+    {
+        itemType = ClipItem::TYPE_IMAGE;
+        hData = GetClipboardData(CF_DIB);
+    }
+
+
     if (!hData)
     {
         CloseClipboard();
-        return L"";
+        return EMPTY_CLIP_ITEM;
     }
 
-    wchar_t *pszText = static_cast<wchar_t*>(GlobalLock(hData));
-    wstring text = pszText ? pszText : L"";
+    void *pData = GlobalLock(hData);
+    if (!pData)
+    {
+        CloseClipboard();
+        return EMPTY_CLIP_ITEM;
+    }
+
+
+    if (itemType == ClipItem::TYPE_TEXT)
+    {
+        wchar_t *pszText = static_cast<wchar_t*>(pData));
+        wstring text = pszText ? pszText : L"";
+        result = ClipItem(text);
+    }
+    else if (itemType == ClipItem::TYPE_IMAGE)
+    {
+        SIZE_T size = GlobalSize(hData);
+
+        // Copy data to vector
+        result.type = ClipItem::TYPE_IMAGE;
+        result.image.assign(
+            reinterpret_cast<unsigned char *>pData,
+            reinterpret_cast<unsigned char *>pData + size
+        );
+    }
+
+
     GlobalUnlock(hData);
     CloseClipboard();
-    return text;
+
+    return result;
 }
 
-bool SetSystemClipboardText(const std::wstring &text)
+bool SetSystemClipboard(const ClipItem &item)
 {
+    if (item.type != ClipItem::TYPE_TEXT)
+        return false;
+    const wstring &text = item.text;
+
     if (!OpenClipboard(NULL))
         return false;
 
@@ -451,8 +514,18 @@ HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState)
     );
 
     // ClipHistory at creation might be from a saved file or simply current clipboard text
-    for (deque<wstring>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
-        SendMessageW(hwndHistDialog, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>(it->c_str()));
+    for (deque<ClipItem>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
+    {
+        if (it->type == ClipItem::TYPE_TEXT)
+        {
+            SendMessageW(
+                hwndHistDialog,
+                LB_ADDSTRING,
+                0,
+                reinterpret_cast<LPARAM>(it->text.c_str())
+            );
+        }
+    }
 
     return hwndHistDialog;
 }
@@ -479,21 +552,32 @@ void SelectHistoryDialogIndex(HWND hwndHistDialog, int index)
     }
 }
 
-void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue &ClipHistory)
+void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue<ClipItem> &ClipHistory)
 {
     if (!hwndHistDialog)
         return;
 
     SendMessageW(hwndHistDialog, LB_RESETCONTENT, 0, 0);
 
-    for (deque<wstring>::const_iterator it = ClipHistory.begin(); it != ClipHistory.end(); ++it)
-        SendMessageW(hwndHistDialog, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>(it->c_str()));
+    for (deque<ClipItem>::const_iterator it = ClipHistory.begin(); it != ClipHistory.end(); ++it)
+    {
+        if (it->type == ClipItem::TYPE_TEXT)
+        {
+            SendMessageW(
+                hwndHistDialog,
+                LB_ADDSTRING,
+                0,
+                reinterpret_cast<LPARAM>(it->text.c_str())
+            );
+        }
+    }
+
 }
 
 void ManageHistoryDialogItemSelected(
     HWND hwndMain,
     HWND hwndHistDialog,
-    EvictingQueue &ClipHistory,
+    EvictingQueue<ClipItem> &ClipHistory,
     HWND hwndPrevWindow
 )
 {
@@ -501,7 +585,7 @@ void ManageHistoryDialogItemSelected(
 
     if (idx >= 0 && static_cast<size_t>(idx) < ClipHistory.Size())
     {
-        if (!SetSystemClipboardText(ClipHistory[idx]))
+        if (!SetSystemClipboard(ClipHistory[idx]))
         {
             MessageBoxW(hwndMain, L"No se pudo establecer el Porta Papeles", L"Error", MB_OK | MB_ICONERROR);
         }
@@ -536,28 +620,32 @@ void PositionHistoryDialogOnMouse(HWND hwndMain, HWND hwndHistoryDialog)
 
 // ##### In memory History #####
 
-void AddToHistory(const wstring &text, EvictingQueue &ClipHistory)
+/**
+ * Adds item if not contained.
+ * Moves as first element if item is already contained.
+ */
+void AddToHistory(EvictingQueue<ClipItem> &ClipHistory, const ClipItem &item)
 {
     size_t idx;
     // Validation
-    if (text.empty())
+    if (item.Empty())
         return;
 
-    idx = ClipHistory.IndexOf(text);
+    idx = ClipHistory.IndexOf(item);
     if (idx == ClipHistory.NotFound)
     {
-        // Saving new text
-        ClipHistory.PushAndEvictExcess(text);
+        // Saving new item
+        ClipHistory.PushAndEvictExcess(item);
     }
     else
     {
-        // When text is already saved, put it as the first option in the
+        // When item is already saved, put it as the first option in the
         // history
         SetIndexAsFirstHistoryItem(ClipHistory, idx);
     }
 }
 
-void SetIndexAsFirstHistoryItem(EvictingQueue &ClipHistory, size_t idx)
+void SetIndexAsFirstHistoryItem(EvictingQueue<ClipItem> &ClipHistory, size_t idx)
 {
     std::swap(ClipHistory[0], ClipHistory[idx]);
 }
@@ -591,7 +679,7 @@ void InitClipboardAPI()
 NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
 {
     NOTIFYICONDATAW nid;
-    std::wcout << "Init Tray Icon START" << std::endl;
+    wcout << "Init Tray Icon START" << endl;
     nid.cbSize = sizeof(nid);
     nid.hWnd = hwndMain;
     nid.uID = 1;
@@ -600,7 +688,7 @@ NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
     nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wcsncpy(nid.szTip, L"Historial de Portapapeles", ARRAY_LENGTH(nid.szTip));
     Shell_NotifyIconW(NIM_ADD, &nid);
-    std::wcout << "Init Tray Icon END" << std::endl;
+    wcout << "Init Tray Icon END" << endl;
 
     return nid;
 }

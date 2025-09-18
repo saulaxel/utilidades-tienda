@@ -8,7 +8,7 @@
 	<iostream>
 	"EvictingQueue.h"
 
-1758147803 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+1758182604 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
 	<windows.h>
 	<shellapi.h>
 	<tchar.h>
@@ -16,5 +16,14 @@
 	<vector>
 	<string>
 	<iostream>
+	<algorithm>
 	"EvictingQueue.h"
+	"ClipItem.h"
+
+1758175147 e:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
+	<deque>
+
+1758182665 e:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
+	<string>
+	<vector>
 
