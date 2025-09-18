@@ -10,6 +10,8 @@ using std::wstring;
 class EvictingQueue
 {
     public:
+        static const size_t NotFound = static_cast<size_t>(-1);
+
         EvictingQueue(size_t capacity) : m_Capacity(capacity) {}
 
         void PushAndEvictExcess(wstring s)
@@ -20,18 +22,32 @@ class EvictingQueue
                 m_Content.pop_back();
         }
 
-        bool Contains(wstring text)
+        size_t IndexOf(wstring text)
         {
             for (deque<wstring>::const_iterator it = m_Content.begin(); it != m_Content.end(); ++it)
             {
                 if (*it == text)
-                    return true;
+                    return it - m_Content.begin();
             }
-            return false;
+            return NotFound;
+        }
+
+        bool Contains(wstring text)
+        {
+            return IndexOf(text) != NotFound;
         }
 
         std::wstring &operator[](size_t i)
         {
+            if (i >= m_Content.size())
+                throw std::out_of_range("Index out of range");
+            return m_Content[i];
+        }
+
+        const std::wstring &operator[](size_t i) const
+        {
+            if (i >= m_Content.size())
+                throw std::out_of_range("Index out of range");
             return m_Content[i];
         }
 

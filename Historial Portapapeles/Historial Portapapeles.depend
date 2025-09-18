@@ -8,3 +8,13 @@
 	<iostream>
 	"EvictingQueue.h"
 
+1758147803 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+	<windows.h>
+	<shellapi.h>
+	<tchar.h>
+	<commctrl.h>
+	<vector>
+	<string>
+	<iostream>
+	"EvictingQueue.h"
+
