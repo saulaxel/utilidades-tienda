@@ -31,9 +31,17 @@ using std::endl;
 
 #include "EvictingQueue.h"
 #include "ClipItem.h"
+#define ForEachClipItem(container)                                           \
+    for (deque<ClipItem>::const_iterator it = container.begin(); \
+         it != container.end();                                  \
+         ++it)
+
 
 #ifndef WM_CLIPBOARDUPDATE
 #define WM_CLIPBOARDUPDATE 0x031D
+#endif
+#ifndef CF_DIBV5
+#define CF_DIBV5 17
 #endif
 
 #define ARRAY_LENGTH(arr) (sizeof(arr) / sizeof((arr)[0]))
@@ -43,7 +51,7 @@ static const UINT WM_TRAY_ICON_CLICK = (WM_USER + 1);
 static const UINT HOTKEY_ID = 1;
 static const UINT APP_WIDTH = 150;
 static const UINT APP_HEIGHT = 300;
-static const ClipItem EMPTY_CLIP_ITEM( wstring(L"") );
+static const ClipItem CLIP_ITEM_EMPTY;
 
 struct AppState {
     HWND hwndMain;
@@ -228,9 +236,9 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
             AddToHistory(appState->ClipHistory, item);
 
             wcout << "Full history:" << endl;
-            for (deque<ClipItem>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
+            ForEachClipItem(appState->ClipHistory)
             {
-                // wcout << "- " << *it << endl;
+                wcout << "- " << *it << endl;
             }
             wcout << endl;
 
@@ -357,44 +365,75 @@ END_SUPPRESS_WARNING
 ClipItem GetSystemClipItem()
 {
     if (!OpenClipboard(NULL))
-        return EMPTY_CLIP_ITEM;
+        return CLIP_ITEM_EMPTY;
 
     const UINT cfRTF = RegisterClipboardFormat(L"Rich Text Format");
 
-    ClipItem result = EMPTY_CLIP_ITEM;
+    ClipItem result;
     ClipItem::Type itemType;
 
 
     HANDLE hData;
+
+    if (IsClipboardFormatAvailable(CF_TEXT))
+    {
+        std::cout << "CF_TEXT Available" << endl;
+    }
     if (IsClipboardFormatAvailable(CF_UNICODETEXT))
     {
         itemType = ClipItem::TYPE_TEXT;
-        hData = GetClipboardData(CF_UNICODETEXT)
+        hData = GetClipboardData(CF_UNICODETEXT);
+        wcout << "CF_UNICODETEXT Available" << endl;
     }
-    else if (IsClipboardFormatAvailable(CF_DIB))
+    if (IsClipboardFormatAvailable(cfRTF))
+    {
+        std::cout << "cfRTF (Rich Text Format Available) Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_BITMAP))
+    {
+        std::cout << "CF_BITMAP Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_DIB))
     {
         itemType = ClipItem::TYPE_IMAGE;
         hData = GetClipboardData(CF_DIB);
+        wcout << "CF_DIB Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_DIBV5))
+    {
+        std::cout << "CF_DIBV5 Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_METAFILEPICT))
+    {
+        std::cout << "CF_METAFILEPICT Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_ENHMETAFILE))
+    {
+        std::cout << "CF_ENHMETAFILE Available" << endl;
+    }
+    if (IsClipboardFormatAvailable(CF_HDROP))
+    {
+        std::cout << "CF_HDROP (File Drop List) Available" << endl;
     }
 
 
     if (!hData)
     {
         CloseClipboard();
-        return EMPTY_CLIP_ITEM;
+        return CLIP_ITEM_EMPTY;
     }
 
     void *pData = GlobalLock(hData);
     if (!pData)
     {
         CloseClipboard();
-        return EMPTY_CLIP_ITEM;
+        return CLIP_ITEM_EMPTY;
     }
 
 
     if (itemType == ClipItem::TYPE_TEXT)
     {
-        wchar_t *pszText = static_cast<wchar_t*>(pData));
+        wchar_t *pszText = static_cast<wchar_t*>(pData);
         wstring text = pszText ? pszText : L"";
         result = ClipItem(text);
     }
@@ -405,8 +444,8 @@ ClipItem GetSystemClipItem()
         // Copy data to vector
         result.type = ClipItem::TYPE_IMAGE;
         result.image.assign(
-            reinterpret_cast<unsigned char *>pData,
-            reinterpret_cast<unsigned char *>pData + size
+            reinterpret_cast<unsigned char *>(pData),
+            reinterpret_cast<unsigned char *>(pData) + size
         );
     }
 
@@ -514,17 +553,14 @@ HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState)
     );
 
     // ClipHistory at creation might be from a saved file or simply current clipboard text
-    for (deque<ClipItem>::const_iterator it = appState->ClipHistory.begin(); it != appState->ClipHistory.end(); ++it)
+    ForEachClipItem(appState->ClipHistory)
     {
-        if (it->type == ClipItem::TYPE_TEXT)
-        {
-            SendMessageW(
-                hwndHistDialog,
-                LB_ADDSTRING,
-                0,
-                reinterpret_cast<LPARAM>(it->text.c_str())
-            );
-        }
+        SendMessageW(
+            hwndHistDialog,
+            LB_ADDSTRING,
+            0,
+            reinterpret_cast<LPARAM>(it->ToString().c_str())
+        );
     }
 
     return hwndHistDialog;
@@ -559,17 +595,14 @@ void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue<ClipItem> &Cli
 
     SendMessageW(hwndHistDialog, LB_RESETCONTENT, 0, 0);
 
-    for (deque<ClipItem>::const_iterator it = ClipHistory.begin(); it != ClipHistory.end(); ++it)
+    ForEachClipItem(ClipHistory)
     {
-        if (it->type == ClipItem::TYPE_TEXT)
-        {
-            SendMessageW(
-                hwndHistDialog,
-                LB_ADDSTRING,
-                0,
-                reinterpret_cast<LPARAM>(it->text.c_str())
-            );
-        }
+        SendMessageW(
+            hwndHistDialog,
+            LB_ADDSTRING,
+            0,
+            reinterpret_cast<LPARAM>(it->ToString().c_str())
+        );
     }
 
 }
@@ -628,7 +661,7 @@ void AddToHistory(EvictingQueue<ClipItem> &ClipHistory, const ClipItem &item)
 {
     size_t idx;
     // Validation
-    if (item.Empty())
+    if (item.IsEmpty())
         return;
 
     idx = ClipHistory.IndexOf(item);

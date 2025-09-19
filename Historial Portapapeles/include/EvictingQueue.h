@@ -2,8 +2,8 @@
 #define EVICTINGQUEUE_H
 
 #include <deque>
-
 using std::deque;
+#include <stdexcept>
 
 template <typename T>
 class EvictingQueue
@@ -54,7 +54,7 @@ class EvictingQueue
             return m_Content[i];
         }
 
-        void setCapacity(size_t capacity)
+        void SetCapacity(size_t capacity)
         {
             if (capacity < m_Content.size())
             {
