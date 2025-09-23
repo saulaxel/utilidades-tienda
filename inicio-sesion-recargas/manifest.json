@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Inicio de Sesión Movivendor",
+    "name": "Inicio de Sesión Recargas",
     "version": "1.2",
-    "description": "Facilita el Log-In para hacer recargas.",
+    "description": "Facilita el inicio de sesión llenando automáticamente tu cuenta.",
     "content_scripts": [
         {
             "matches": ["https://web.movivendor.com/login"],
@@ -15,7 +15,9 @@
         "open_in_tab": true
     }
     ,"permissions": [
-        "https://web.movivendor.com/login",
         "storage"
+    ],
+    "host_permissions": [
+        "https://web.movivendor.com/login"
     ]
 }
