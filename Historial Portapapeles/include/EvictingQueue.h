@@ -25,6 +25,20 @@ class EvictingQueue
                 m_Content.pop_back();
         }
 
+        void MoveIndexAsFirst(size_t i)
+        {
+            if (i > m_Content.size())
+            {
+                throw std::out_of_range("Index is greater than current elements");
+            }
+            if (i == 0)
+                return;
+
+            T value = m_Content[i];
+            m_Content.erase(m_Content.begin() + i);
+            m_Content.push_front(value);
+        }
+
         size_t IndexOf(T item)
         {
             for (typename deque<T>::const_iterator it = m_Content.begin(); it != m_Content.end(); ++it)

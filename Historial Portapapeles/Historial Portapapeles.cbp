@@ -36,7 +36,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-g" />
-			<Add option="-Iinclude" />
+			<Add option="-Iinclude -finput-charset=UTF-8" />
 		</Compiler>
 		<Linker>
 			<Add library="gdi32" />

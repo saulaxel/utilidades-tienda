@@ -11,7 +11,7 @@
 	"EvictingQueue.h"
 	"ClipItem.h"
 
-1758182604 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+1758883357 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
 	<windows.h>
 	<shellapi.h>
 	<tchar.h>
@@ -23,12 +23,15 @@
 	"EvictingQueue.h"
 	"ClipItem.h"
 
-1758175147 e:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
+1758852576 e:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
 	<deque>
+	<stdexcept>
 
-1758182665 e:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
+1758872429 e:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
 	<string>
 	<vector>
+	<stdexcept>
+	<iostream>
 
 1758249205 d:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
 	<deque>
