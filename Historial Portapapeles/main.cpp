@@ -56,8 +56,9 @@ using std::wostringstream;
 static const UINT DEFAULT_CLIPBOARD_HISTORY_SIZE = 50;
 static const UINT WM_TRAY_ICON_CLICK = (WM_USER + 1);
 static const UINT HOTKEY_ID = 1;
-static const UINT APP_WIDTH = 150;
+static const UINT APP_WIDTH = 200;
 static const UINT APP_HEIGHT = 300;
+static const UINT LINE_HEIGHT = 18;
 static const ClipItem CLIP_ITEM_EMPTY;
 
 struct AppState {
@@ -311,20 +312,21 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
 
     case WM_CLIPBOARDUPDATE:
     case WM_DRAWCLIPBOARD:
-        {
-            LOG_INFO(L"WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD");
-            PrintHistory(L"Clipboard Update before adding", appState->ClipHistory);
-            ClipItem item = GetSystemClipboardAsClipItem();
-            LOG_DEBUG(L"Glipboard Text is: <" + item.ToString() + L">");
-            AddToHistory(appState->ClipHistory, item);
+    {
+        LOG_INFO(L"WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD");
+        PrintHistory(L"Clipboard Update before adding", appState->ClipHistory);
+        ClipItem item = GetSystemClipboardAsClipItem();
+        LOG_DEBUG(L"Glipboard Text is: <" + item.ToString() + L">");
+        AddToHistory(appState->ClipHistory, item);
 
-            PrintHistory(L"Clipboard Update ater adding", appState->ClipHistory);
+        PrintHistory(L"Clipboard Update ater adding", appState->ClipHistory);
 
-            UpdateHistoryDialog(appState->hwndHistDialog, appState->ClipHistory);
-            if (msg == WM_DRAWCLIPBOARD && appState->hNextViewer)
-                SendMessageW(appState->hNextViewer, msg, wParam, lParam);
-        }
+        UpdateHistoryDialog(appState->hwndHistDialog, appState->ClipHistory);
+        if (msg == WM_DRAWCLIPBOARD && appState->hNextViewer)
+            SendMessageW(appState->hNextViewer, msg, wParam, lParam);
+
         break;
+    }
 
     case WM_CHANGECBCHAIN:
         LOG_INFO(L"WM_CHANGECBCHAIN");
@@ -374,6 +376,56 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     }
     break;
 
+    case WM_DRAWITEM:
+    {
+        LOG_INFO(L"WM_DRAWITEM");
+        DRAWITEMSTRUCT* dis = (DRAWITEMSTRUCT*)lParam;
+        if ((HWND)dis->hwndItem == appState->hwndHistDialog && dis->itemID != (UINT)-1) {
+            // Background
+            FillRect(dis->hDC, &dis->rcItem,
+                     (HBRUSH)(dis->itemState & ODS_SELECTED ?
+                              GetSysColorBrush(COLOR_HIGHLIGHT) :
+                              GetSysColorBrush(COLOR_WINDOW)));
+
+            // Get type
+            ClipItem::Type type = static_cast<ClipItem::Type>(
+                SendMessageW(appState->hwndHistDialog, LB_GETITEMDATA, dis->itemID, 0)
+            );
+
+            // Draw "icon" (just a colored square)
+            HBRUSH hBrush = CreateSolidBrush(type == ClipItem::TYPE_TEXT ? RGB(0, 128, 255) : RGB(0, 200, 0));
+            RECT rcIcon = dis->rcItem;
+            rcIcon.right = rcIcon.left + 12;
+            rcIcon.top += 2;
+            rcIcon.bottom -= 2;
+            FillRect(dis->hDC, &rcIcon, hBrush);
+            DeleteObject(hBrush);
+
+            // Get text
+            wchar_t buffer[256];
+            SendMessageW(appState->hwndHistDialog, LB_GETTEXT, dis->itemID, (LPARAM)buffer);
+
+            // Draw text after icon
+            SetBkMode(dis->hDC, TRANSPARENT);
+            SetTextColor(dis->hDC,
+                         (dis->itemState & ODS_SELECTED)
+                         ? GetSysColor(COLOR_HIGHLIGHTTEXT)
+                         : GetSysColor(COLOR_WINDOWTEXT));
+            RECT rcText = dis->rcItem;
+            rcText.left += 16; // space after icon
+            DrawTextW(dis->hDC, buffer, -1, &rcText, DT_LEFT | DT_VCENTER | DT_SINGLELINE);
+        }
+        return TRUE;
+    }
+
+    case WM_MEASUREITEM:
+    {
+        LOG_INFO(L"WM_MEASUREITEM");
+        MEASUREITEMSTRUCT* mis = (MEASUREITEMSTRUCT*)lParam;
+        mis->itemHeight = LINE_HEIGHT;
+        return TRUE;
+    }
+
     case WM_DESTROY:
         LOG_INFO(L"WM_DESTROY");
         if (pRemoveClipboardFormatListener)
@@ -420,7 +472,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     HWND hwndMain = CreateWindowEx(
         WS_EX_TOPMOST | WS_EX_NOACTIVATE,
         wc.lpszClassName, _T("Historial de Portapapeles"),
-        WS_POPUP | WS_VISIBLE ,
+        WS_POPUP | WS_VISIBLE | WS_BORDER,
         CW_USEDEFAULT, CW_USEDEFAULT, APP_WIDTH, APP_HEIGHT,
         NULL, NULL, hInstance, &appState
     );
@@ -743,6 +795,8 @@ vector<unsigned char> BuildShellIDList(const wchar_t *pFileList)
     {
         LPITEMIDLIST pidl = NULL;
         ULONG eaten = 0;
+        // Supposedly the old headers (XP or previous) are wrong and
+        // the next call is right. Change the .h directly if necessary
         if (SUCCEEDED(SHParseDisplayName(p, NULL, &pidl, 0, &eaten)) && pidl)
             pidls.push_back(pidl);
     }
@@ -790,9 +844,9 @@ HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState)
 {
     HWND hwndHistDialog = CreateWindowExW(
         0, L"LISTBOX", NULL,
-        WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL
-        | LBS_NOTIFY | WS_VSCROLL | WS_TABSTOP,
-        CW_USEDEFAULT, CW_USEDEFAULT, APP_WIDTH, APP_HEIGHT,
+        WS_CHILD | WS_VISIBLE | WS_VSCROLL
+        | LBS_NOTIFY | WS_TABSTOP | LBS_OWNERDRAWFIXED | LBS_HASSTRINGS,
+        0, 0, APP_WIDTH, APP_HEIGHT,
         hwndMain, NULL, hInst, NULL
     );
 
@@ -806,15 +860,7 @@ HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState)
     );
 
     // ClipHistory at creation might be from a saved file or simply current clipboard text
-    ForEachClipItem(appState->ClipHistory)
-    {
-        SendMessageW(
-            hwndHistDialog,
-            LB_ADDSTRING,
-            0,
-            reinterpret_cast<LPARAM>(it->ToString().c_str())
-        );
-    }
+    UpdateHistoryDialog(hwndHistDialog, appState->ClipHistory);
 
     return hwndHistDialog;
 }
@@ -850,12 +896,13 @@ void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue<ClipItem> &Cli
 
     ForEachClipItem(ClipHistory)
     {
-        SendMessageW(
+        int idx = SendMessageW(
             hwndHistDialog,
             LB_ADDSTRING,
             0,
             reinterpret_cast<LPARAM>(it->ToString().c_str())
         );
+        SendMessageW(hwndHistDialog, LB_SETITEMDATA, idx, static_cast<LPARAM>(it->type));
     }
 
 }

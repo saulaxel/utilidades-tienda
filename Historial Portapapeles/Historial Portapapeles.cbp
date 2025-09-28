@@ -47,7 +47,9 @@
 		</Linker>
 		<Unit filename="include\ClipItem.h" />
 		<Unit filename="include\EvictingQueue.h" />
+		<Unit filename="include\Logger.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src\Logger.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
