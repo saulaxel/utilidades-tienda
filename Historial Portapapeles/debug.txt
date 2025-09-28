@@ -1,0 +1,4213 @@
+[INFO] Before CreateWindow
+[INFO] WndProc 129
+[INFO] AppState address: 0
+[INFO] WM_NCCREATE
+[INFO] WndProc 131
+[INFO] AppState address: 2293068
+[INFO] WndProc 1
+[INFO] AppState address: 2293068
+[INFO] WM_CREATE
+[INFO] Windows Vista+ listener
+[INFO] Init Tray Icon START
+[INFO] Init Tray Icon END
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] WndProc 528
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 5
+[INFO] AppState address: 2293068
+[INFO] WndProc 3
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] After CreateWindow
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 5
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <std::>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <std::>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 3
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <std::>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: < std>
+[INFO] Clipboard Update ater adding
+[INFO] - Text < std>
+[INFO] - Text <std::>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49656
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 537
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 3
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] WndProc 528
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 33
+[INFO] WndProc 33
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 513
+[INFO] WM_LBUTTONDOWN
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] WndProc 305
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 514
+[INFO] HistoryDialogProc 533
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 132
+[INFO] WndProc 528
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 33
+[INFO] WndProc 33
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 515
+[INFO] WM_LBUTTONDBLCLK
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text < std>
+[INFO] - Text <std::>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text < std>
+[INFO] - Text <std::>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 533
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <std::>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 3
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <LOG_INFO(L>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: < std>
+[INFO] Clipboard Update ater adding
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <std::>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfRTF (Rich Text Format Available) Available
+[INFO] cfHTML Available
+[INFO] CF_METAFILEPICT Available
+[INFO] CF_ENHMETAFILE Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfRTF (Rich Text Format Available) Available
+[INFO] cfHTML Available
+[INFO] CF_METAFILEPICT Available
+[INFO] CF_ENHMETAFILE Available
+[DEBUG] Glipboard Text is: <B >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfRTF (Rich Text Format Available) Available
+[INFO] cfHTML Available
+[INFO] CF_METAFILEPICT Available
+[INFO] CF_ENHMETAFILE Available
+[DEBUG] Glipboard Text is: <C >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfRTF (Rich Text Format Available) Available
+[INFO] cfHTML Available
+[INFO] CF_METAFILEPICT Available
+[INFO] CF_ENHMETAFILE Available
+[DEBUG] Glipboard Text is: <D >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfRTF (Rich Text Format Available) Available
+[INFO] cfHTML Available
+[INFO] CF_METAFILEPICT Available
+[INFO] CF_ENHMETAFILE Available
+[DEBUG] Glipboard Text is: <D >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <LOG_INFO(L>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: < std>
+[INFO] Clipboard Update ater adding
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[DEBUG] Glipboard Text is: <std::>
+[INFO] Clipboard Update ater adding
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <B >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <B >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <C >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <C >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] - HTML <D >
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <D >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <D >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - HTML <A >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49711
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_HDROP (File Drop List) Available
+[DEBUG] Glipboard Text is: <>
+[INFO] Clipboard Update ater adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_HDROP (File Drop List) Available
+[DEBUG] Glipboard Text is: <>
+[INFO] Clipboard Update ater adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_HDROP (File Drop List) Available
+[DEBUG] Glipboard Text is: <>
+[INFO] Clipboard Update ater adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 3
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_TEXT Available
+[INFO] CF_UNICODETEXT Available
+[INFO] cfHTML Available
+[DEBUG] Glipboard Text is: <A >
+[INFO] Clipboard Update ater adding
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 786
+[INFO] AppState address: 2293068
+[INFO] WM_HOTKEY
+[INFO] HistoryDialogProc 417
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] WndProc 642
+[INFO] AppState address: 2293068
+[INFO] WndProc 7
+[INFO] AppState address: 2293068
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 133
+[INFO] AppState address: 2293068
+[INFO] WndProc 20
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] WndProc 8
+[INFO] AppState address: 2293068
+[INFO] WndProc 641
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 395
+[INFO] HistoryDialogProc 390
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 407
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 132
+[INFO] HistoryDialogProc 32
+[INFO] WndProc 32
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 512
+[INFO] WndProc 15
+[INFO] AppState address: 2293068
+[INFO] WM_PAINT
+[INFO] Finished WndProc
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 15
+[INFO] HistoryDialogProc 133
+[INFO] HistoryDialogProc 20
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 308
+[INFO] AppState address: 2293068
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 257
+[INFO] HistoryDialogProc 256
+[INFO] WM_KEYDOWN
+[INFO] HistoryDialogProc 392
+[INFO] Manage History start
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History before updating
+[INFO] - HTML <A >
+[INFO] - File <>
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Manage History after updating
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] WndProc 24
+[INFO] AppState address: 2293068
+[INFO] WndProc 70
+[INFO] AppState address: 2293068
+[INFO] WndProc 71
+[INFO] AppState address: 2293068
+[INFO] WndProc 134
+[INFO] AppState address: 2293068
+[INFO] WndProc 6
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 7
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 134
+[INFO] HistoryDialogProc 6
+[INFO] WndProc 28
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 8
+[INFO] WndProc 273
+[INFO] AppState address: 2293068
+[INFO] HistoryDialogProc 641
+[INFO] HistoryDialogProc 642
+[INFO] Manage History before pasting
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] Manage History after pasting
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 258
+[INFO] WndProc 797
+[INFO] AppState address: 2293068
+[INFO] WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD
+[INFO] Clipboard Update before adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] CF_HDROP (File Drop List) Available
+[DEBUG] Glipboard Text is: <>
+[INFO] Clipboard Update ater adding
+[INFO] - File <>
+[INFO] - HTML <A >
+[INFO] - HTML <D >
+[INFO] - HTML <C >
+[INFO] - HTML <B >
+[INFO] - Text <std::>
+[INFO] - Text < std>
+[INFO] - Text <LOG_INFO(L>
+[INFO] 
+[INFO] HistoryDialogProc 388
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] HistoryDialogProc 384
+[INFO] Finished WndProc
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068
+[INFO] WndProc 49650
+[INFO] AppState address: 2293068

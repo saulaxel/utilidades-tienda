@@ -53,10 +53,10 @@ struct ClipItem
         wstring result;
         switch (type)
         {
-        case TYPE_TEXT:   result = L"Text " + text; break;
-        case TYPE_HTML:   result = L"Html " + text; break;
-        case TYPE_IMAGE:  result = L"Imagen";       break;
-        case TYPE_FILE:   result = L"Archivo";      break;
+        case TYPE_TEXT:   result = text;      break;
+        case TYPE_HTML:   result = text;      break;
+        case TYPE_IMAGE:  result = L"Imagen"; break;
+        case TYPE_FILE:   result = text;      break;
         case TYPE_NONE:   throw std::logic_error("ToString() to ClipItem TYPE_NONE unavaiable");
         default: throw std::logic_error("Invalid ClipItem type");
         }

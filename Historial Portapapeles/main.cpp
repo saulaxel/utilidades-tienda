@@ -30,9 +30,14 @@ using std::string;
 using std::wcout;
 using std::endl;
 #include <algorithm>
+#include <sstream>
+using std::wostringstream;
 
+#include "Logger.h"
 #include "EvictingQueue.h"
 #include "ClipItem.h"
+
+
 #define ForEachClipItem(container)                               \
     for (deque<ClipItem>::const_iterator it = container.begin(); \
          it != container.end();                                  \
@@ -73,6 +78,7 @@ string VectorToString(const vector<unsigned char> &v);
 wstring VectorToWstring(const vector<unsigned char> &v);
 size_t StringSizeInBytes(const string &str);
 size_t WstringSizeInBytes(const wstring &str);
+wstring IntToString(long a);
 
 // Pointers to functions that will be set at runtime
 typedef BOOL (WINAPI *PFN_FormatListenerManager)(HWND);
@@ -91,7 +97,8 @@ bool SetSystemClipboardToClipItem(const ClipItem &item);
 void PasteSystemClipboard();
 
 // ##### FDROP management #####
-const wchar_t *PathsFromHDROPBlob(const std::vector<unsigned char>& blob);
+const wchar_t *PathsFromHDROPBlob(const std::vector<unsigned char> &blob);
+vector<unsigned char> BuildShellIDList(const wchar_t *pFileList);
 
 // ##### GUI Dialog #####
 HWND CreateHistoryDialog(HWND hwndMain, HINSTANCE hInst, AppState *appState);
@@ -125,16 +132,28 @@ void RemoveTrayIcon(NOTIFYICONDATAW &nid);
 /******************** Function Definitions ********************/
 /**************************************************************/
 
-// Helper functions
+// ##### Helper functions #####
 
 void PrintHistory(wstring msg, EvictingQueue<ClipItem> &ClipHistory)
 {
-    wcout << msg << endl;
+    LOG_INFO(msg);
     ForEachClipItem(ClipHistory)
     {
-        wcout << "- <" << *it << ">" << endl;
+        wstring p = L"- ";
+        switch (it->type)
+        {
+        case ClipItem::TYPE_TEXT:  p += L"Text "; break;
+        case ClipItem::TYPE_HTML:  p += L"HTML "; break;
+        case ClipItem::TYPE_IMAGE: p += L"Image "; break;
+        case ClipItem::TYPE_FILE:  p += L"File "; break;
+        default: throw std::logic_error("Printing empty");
+        }
+        p += L"<";
+        p += it->ToString();
+        p += L">";
+        LOG_INFO(p);
     }
-    wcout << endl;
+    LOG_INFO(L"");
 }
 
 string VectorToString(const vector<unsigned char> &v)
@@ -167,6 +186,14 @@ size_t WstringSizeInBytes(const wstring &str)
     return (str.length() + 1) * sizeof(wchar_t);
 }
 
+wstring IntToString(long n)
+{
+    wostringstream oss;
+    oss << n;
+    wstring str = oss.str();
+    return str;
+}
+
 // ##### WinApi Window Procedures #####
 
 LRESULT CALLBACK HistoryDialogProc(
@@ -179,12 +206,12 @@ LRESULT CALLBACK HistoryDialogProc(
 )
 {
     AppState *appState = reinterpret_cast<AppState *>(dwRefData);
-    //wcout << "HistoryDialogProc " << msg << endl;
+    LOG_INFO(wstring(L"HistoryDialogProc ") + IntToString(msg));
 
     switch (msg)
     {
     case WM_KEYDOWN:
-        //wcout << "WM_KEYDOWN" << endl;
+        LOG_INFO(L"WM_KEYDOWN");
         if (wParam == VK_RETURN)
         {
             ManageHistoryDialogItemSelected(
@@ -203,7 +230,7 @@ LRESULT CALLBACK HistoryDialogProc(
         break;
 
     case WM_LBUTTONDBLCLK:
-        //wcout << "WM_LBUTTONDBLCLK" << endl;
+        LOG_INFO(L"WM_LBUTTONDBLCLK");
         ManageHistoryDialogItemSelected(
             appState->hwndMain,
             hwndHistDialog,
@@ -214,11 +241,13 @@ LRESULT CALLBACK HistoryDialogProc(
 
     case WM_LBUTTONDOWN:
     {
+        LOG_INFO(L"WM_LBUTTONDOWN");
         ShowHistoryDialog(appState->hwndMain, hwndHistDialog);
         break;
     }
 
     case WM_DESTROY:
+        LOG_INFO(L"WM_DESTROY");
         // Clean subclass (avoids leaks)
         RemoveWindowSubclass(hwndHistDialog, HistoryDialogProc, uIdSubclass);
         break;
@@ -234,8 +263,8 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
          GetWindowLongPtr(hwndMain, GWLP_USERDATA)
     );
 
-    //wcout << "WndProc " << msg << endl;
-    //wcout << "AppState address: " << appState << endl;
+    LOG_INFO(L"WndProc " + IntToString(msg));
+    LOG_INFO(L"AppState address: " + IntToString(reinterpret_cast<long>(appState)));
 
     switch(msg)
     {
@@ -244,7 +273,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         // The creation param is only received on creation
         CREATESTRUCT *cs = reinterpret_cast<CREATESTRUCT *>(lParam);
         appState = reinterpret_cast<AppState *>(cs->lpCreateParams);
-        //wcout << "WM_NCCREATE" << endl;
+        LOG_INFO(L"WM_NCCREATE");
 
         // Store the param for future calls
         SetWindowLongPtr(
@@ -257,16 +286,16 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
 
 
     case WM_CREATE:
-        //wcout << "WM_CREATE" << endl;
+        LOG_INFO(L"WM_CREATE");
         InitClipboardAPI();
         if (pAddClipboardFormatListener)
         {
-            //wcout << "Windows Vista+ listener" << endl;
+            LOG_INFO(L"Windows Vista+ listener");
             pAddClipboardFormatListener(hwndMain);
         }
         else
         {
-            //wcout << "Windows XP- listener" << endl;
+            LOG_INFO(L"Windows XP- listener");
             appState->hNextViewer = SetClipboardViewer(hwndMain);
         }
 
@@ -283,10 +312,10 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_CLIPBOARDUPDATE:
     case WM_DRAWCLIPBOARD:
         {
-            wcout << "WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD" << endl;
+            LOG_INFO(L"WM_CLIPBOARDUPDATE/WM_DRAWCLIPBOARD");
             PrintHistory(L"Clipboard Update before adding", appState->ClipHistory);
             ClipItem item = GetSystemClipboardAsClipItem();
-            wcout << "Glipboard Text is: <" << item << ">" << endl;
+            LOG_DEBUG(L"Glipboard Text is: <" + item.ToString() + L">");
             AddToHistory(appState->ClipHistory, item);
 
             PrintHistory(L"Clipboard Update ater adding", appState->ClipHistory);
@@ -298,7 +327,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_CHANGECBCHAIN:
-        //wcout << "WM_CHANGECBCHAIN" << endl;
+        LOG_INFO(L"WM_CHANGECBCHAIN");
         if (reinterpret_cast<HWND>(wParam) == appState->hNextViewer)
             appState->hNextViewer = (HWND)lParam;
         else if (appState->hNextViewer)
@@ -306,7 +335,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_HOTKEY:
-        //wcout << "WM_HOTKEY" << endl;
+        LOG_INFO(L"WM_HOTKEY");
         if (wParam == HOTKEY_ID)
         {
             appState->hwndPrevWindow = GetForegroundWindow();
@@ -316,11 +345,11 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_KEYDOWN:
-        //wcout << "WM_KEYDOWN" << endl;
+        LOG_INFO(L"WM_KEYDOWN");
         break;
 
     case WM_TRAY_ICON_CLICK:
-        //wcout << "WM_TRAY_ICON_CLIC" << endl;
+        LOG_INFO(L"WM_TRAY_ICON_CLIC");
         if (LOWORD(lParam) == WM_LBUTTONDBLCLK)
         {
             appState->hwndPrevWindow = GetForegroundWindow();
@@ -332,6 +361,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     {
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hwndMain, &ps);
+        LOG_INFO(L"WM_PAINT");
 
         // Fill background with system window color
         RECT rect;
@@ -345,7 +375,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     break;
 
     case WM_DESTROY:
-        //wcout << "WM_DESTROY" << endl;
+        LOG_INFO(L"WM_DESTROY");
         if (pRemoveClipboardFormatListener)
             pRemoveClipboardFormatListener(hwndMain);
         else
@@ -358,7 +388,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
     default:
         return DefWindowProc(hwndMain, msg, wParam, lParam);
     }
-    //wcout << "Finished WndProc" << endl;
+    LOG_INFO(L"Finished WndProc");
     return 0;
 }
 
@@ -374,6 +404,9 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     wc.lpszClassName = _T("ClipboardHistoryHiddenWnd");
     RegisterClass(&wc);
 
+    Logger::instance().enableFileLogging(true);
+    Logger::instance().setConsoleLogLevel(Logger::INFO);
+
     AppState appState = {
         NULL,
         NULL,
@@ -383,7 +416,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
         0
     };
 
-    //wcout << "Before CreateWindow" << endl;
+    LOG_INFO(L"Before CreateWindow");
     HWND hwndMain = CreateWindowEx(
         WS_EX_TOPMOST | WS_EX_NOACTIVATE,
         wc.lpszClassName, _T("Historial de Portapapeles"),
@@ -391,7 +424,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
         CW_USEDEFAULT, CW_USEDEFAULT, APP_WIDTH, APP_HEIGHT,
         NULL, NULL, hInstance, &appState
     );
-    //wcout << "After CreateWindow" << endl;
+    LOG_INFO(L"After CreateWindow");
 
     appState.hwndMain = hwndMain;
     ShowWindow(hwndMain, SW_HIDE);
@@ -447,30 +480,30 @@ ClipItem GetSystemClipboardAsClipItem()
     if (!OpenClipboard(NULL))
         return CLIP_ITEM_EMPTY;
 
-//    const UINT cfRTF = RegisterClipboardFormat(L"Rich Text Format");
+    const UINT cfRTF = RegisterClipboardFormat(L"Rich Text Format");
     const UINT cfHTML = RegisterClipboardFormat(L"HTML Format");
 
-//
-//    if (IsClipboardFormatAvailable(CF_TEXT))
-//        wcout << "CF_TEXT Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_UNICODETEXT))
-//        wcout << "CF_UNICODETEXT Available" << endl;
-//    if (IsClipboardFormatAvailable(cfRTF))
-//        wcout << "cfRTF (Rich Text Format Available) Available" << endl;
-//    if (IsClipboardFormatAvailable(cfHTML))
-//        wcout << "cfHTML Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_BITMAP))
-//        wcout << "CF_BITMAP Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_DIB))
-//        wcout << "CF_DIB Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_DIBV5))
-//        wcout << "CF_DIBV5 Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_METAFILEPICT))
-//        wcout << "CF_METAFILEPICT Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_ENHMETAFILE))
-//        wcout << "CF_ENHMETAFILE Available" << endl;
-//    if (IsClipboardFormatAvailable(CF_HDROP))
-//        wcout << "CF_HDROP (File Drop List) Available" << endl;
+
+    if (IsClipboardFormatAvailable(CF_TEXT))
+        LOG_INFO(L"CF_TEXT Available");
+    if (IsClipboardFormatAvailable(CF_UNICODETEXT))
+        LOG_INFO(L"CF_UNICODETEXT Available");
+    if (IsClipboardFormatAvailable(cfRTF))
+        LOG_INFO(L"cfRTF (Rich Text Format Available) Available");
+    if (IsClipboardFormatAvailable(cfHTML))
+        LOG_INFO(L"cfHTML Available");
+    if (IsClipboardFormatAvailable(CF_BITMAP))
+        LOG_INFO(L"CF_BITMAP Available");
+    if (IsClipboardFormatAvailable(CF_DIB))
+        LOG_INFO(L"CF_DIB Available");
+    if (IsClipboardFormatAvailable(CF_DIBV5))
+        LOG_INFO(L"CF_DIBV5 Available");
+    if (IsClipboardFormatAvailable(CF_METAFILEPICT))
+        LOG_INFO(L"CF_METAFILEPICT Available");
+    if (IsClipboardFormatAvailable(CF_ENHMETAFILE))
+        LOG_INFO(L"CF_ENHMETAFILE Available");
+    if (IsClipboardFormatAvailable(CF_HDROP))
+        LOG_INFO(L"CF_HDROP (File Drop List) Available");
 
 
     UINT format = 0;
@@ -491,6 +524,10 @@ ClipItem GetSystemClipboardAsClipItem()
     else if (IsClipboardFormatAvailable(CF_HDROP))
     {
         format = CF_HDROP;
+    }
+    else
+    {
+        return CLIP_ITEM_EMPTY;
     }
 
     raw_data = GetSystemClipboardData(format);
@@ -586,7 +623,7 @@ bool SetSystemClipboardToClipItem(const ClipItem &item)
         size_t size = WstringSizeInBytes(item.text);
         if (!SetSystemClipboardData(pData, size, CF_UNICODETEXT))
         {
-            wcout << "Error Set Text" << endl;
+            LOG_ERROR(L"Error Set Text");
         }
         break;
     }
@@ -601,11 +638,11 @@ bool SetSystemClipboardToClipItem(const ClipItem &item)
 
         if (!SetSystemClipboardData(pHtmlData, htmlSize, cfHTML))
         {
-            wcout << "Error Set HTML 1" << endl;
+            LOG_ERROR(L"Error Set HTML 1");
         }
         if (!SetSystemClipboardData(pTextData, textSize, CF_UNICODETEXT))
         {
-            wcout << "Error Set HTML 2" << endl;
+            LOG_ERROR(L"Error Set HTML 2");
         }
         break;
     }
@@ -615,7 +652,7 @@ bool SetSystemClipboardToClipItem(const ClipItem &item)
         size_t size = item.image.size();
         if (!SetSystemClipboardData(pData, size, CF_DIBV5))
         {
-            wcout << "Error Set Image" << endl;
+            LOG_ERROR(L"Error Set Image");
         }
         break;
     }
@@ -626,7 +663,7 @@ bool SetSystemClipboardToClipItem(const ClipItem &item)
         size_t size = item.file.size();
         if (!SetSystemClipboardData(pData, size, CF_HDROP))
         {
-            wcout << "Error Set File 1" << endl;
+            LOG_ERROR(L"Error Set File 1");
         }
 
         // Extra settings for it to work on Windows File Explorer
@@ -634,7 +671,15 @@ bool SetSystemClipboardToClipItem(const ClipItem &item)
         UINT cfEffect = RegisterClipboardFormat(L"Preferred DropEffect");
         if (!SetSystemClipboardData(&effect, sizeof(effect), cfEffect))
         {
-            wcout << "Error set File 2" << endl;
+            LOG_ERROR(L"Error set File 2");
+        }
+
+        UINT cfShellIDList = RegisterClipboardFormat(L"Shell IDList Array");
+        const wchar_t *pFileList = PathsFromHDROPBlob(item.file);
+        vector<unsigned char> shellIDList = BuildShellIDList(pFileList);
+        if (!SetSystemClipboardData(&shellIDList[0], shellIDList.size(), cfShellIDList))
+        {
+            LOG_ERROR(L"Error set File 3");
         }
 
         break;
@@ -688,23 +733,22 @@ const wchar_t *PathsFromHDROPBlob(const std::vector<unsigned char> &blob)
     return pFileList;
 }
 
-void BuildShellIDList(const wchar_t *pFileList, vector<LPITEMIDLIST> pidls)
+vector<unsigned char> BuildShellIDList(const wchar_t *pFileList)
 {
-
     if (!pFileList)
-        return;
+        return vector<unsigned char>();
 
-    for (const wchar_t *p = pFileList; *p != L'\0'; p += wcslen(p) + 1)
+    std::vector<LPITEMIDLIST> pidls;
+    for (const wchar_t* p = pFileList; *p != L'\0'; p += wcslen(p) + 1)
     {
         LPITEMIDLIST pidl = NULL;
         ULONG eaten = 0;
-
-        if (SUCCEEDED(SHParseDisplayName(*p, NULL, &pidl, 0, &eaten)) && pidl)
+        if (SUCCEEDED(SHParseDisplayName(p, NULL, &pidl, 0, &eaten)) && pidl)
             pidls.push_back(pidl);
     }
 
     if (pidls.empty())
-        return;
+        return vector<unsigned char>();
 
     // Compute total size for CIDA
     size_t cidaSize = sizeof(CIDA) + (pidls.size() + 1) * sizeof(UINT);
@@ -714,9 +758,31 @@ void BuildShellIDList(const wchar_t *pFileList, vector<LPITEMIDLIST> pidls)
     }
     cidaSize += sizeof(ITEMIDLIST);
 
+    vector<unsigned char> result(cidaSize);
+
+    // Fill CIDA
+    CIDA *cida = reinterpret_cast<CIDA *>(&result[0]);
+    cida->cidl = static_cast<UINT>(pidls.size());
+    UINT *offsets = reinterpret_cast<UINT *>(cida + 1);
+
+    size_t dataOffset = sizeof(CIDA) + (pidls.size() + 1) * sizeof(UINT);
+    for (size_t i = 0; i < pidls.size(); ++i)
+    {
+        offsets[i] = static_cast<UINT>(dataOffset);
+        size_t sz = ILGetSize(pidls[i]);
+        memcpy(&result[dataOffset], pidls[i], sz);
+        dataOffset += sz;
+    }
+    offsets[pidls.size()] = static_cast<UINT>(dataOffset); // null PIDL
+    ITEMIDLIST nullID = { };
+    memcpy(&result[dataOffset], &nullID, sizeof(nullID));
+
+    // clean up PIDLs
+    for (size_t i = 0; i < pidls.size(); ++i)
+        ILFree(pidls[i]);
+
+    return result;
 }
-
-
 
 // ##### GUI Dialog #####
 
@@ -899,7 +965,7 @@ void InitClipboardAPI()
 NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
 {
     NOTIFYICONDATAW nid;
-    //wcout << "Init Tray Icon START" << endl;
+    LOG_INFO(L"Init Tray Icon START");
     nid.cbSize = sizeof(nid);
     nid.hWnd = hwndMain;
     nid.uID = 1;
@@ -908,7 +974,7 @@ NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
     nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wcsncpy(nid.szTip, L"Historial de Portapapeles", ARRAY_LENGTH(nid.szTip));
     Shell_NotifyIconW(NIM_ADD, &nid);
-    //wcout << "Init Tray Icon END" << endl;
+    LOG_INFO(L"Init Tray Icon END");
 
     return nid;
 }

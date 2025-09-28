@@ -1,13 +1,16 @@
 # depslib dependency file v1.0
-1758254919 source:d:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+1759035358 source:d:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
 	<windows.h>
 	<shellapi.h>
 	<tchar.h>
 	<commctrl.h>
+	<shlobj.h>
 	<vector>
 	<string>
 	<iostream>
 	<algorithm>
+	<sstream>
+	"Logger.h"
 	"EvictingQueue.h"
 	"ClipItem.h"
 
@@ -33,13 +36,21 @@
 	<stdexcept>
 	<iostream>
 
-1758249205 d:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
+1758939914 d:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
 	<deque>
 	<stdexcept>
 
-1758253410 d:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
+1759029127 d:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
 	<string>
 	<vector>
 	<stdexcept>
 	<iostream>
+
+1759032636 source:d:\repositorios\utilidades-tienda\historial portapapeles\src\logger.cpp
+	"Logger.h"
+
+1759035395 d:\repositorios\utilidades-tienda\historial portapapeles\include\logger.h
+	<iostream>
+	<fstream>
+	<string>
 
