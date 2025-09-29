@@ -57,7 +57,7 @@ struct ClipItem
         case TYPE_HTML:   result = text;      break;
         case TYPE_IMAGE:  result = L"Imagen"; break;
         case TYPE_FILE:   result = text;      break;
-        case TYPE_NONE:   throw std::logic_error("ToString() to ClipItem TYPE_NONE unavaiable");
+        case TYPE_NONE:   result = L"Empty";  break;
         default: throw std::logic_error("Invalid ClipItem type");
         }
 
