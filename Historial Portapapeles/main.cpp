@@ -149,7 +149,7 @@ void AddToHistory(EvictingQueue<ClipItem> &ClipHistory, const ClipItem &item);
 void InitClipboardAPI();
 
 // ##### TrayIcon (Little Taskbar Icon) #####
-NOTIFYICONDATAW InitTrayIcon(HWND hwndMain);
+NOTIFYICONDATAW InitTrayIcon(HWND hwndMain, HINSTANCE hInstance);
 void RemoveTrayIcon(NOTIFYICONDATAW &nid);
 
 /**************************************************************/
@@ -331,7 +331,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         }
 
         RegisterHotKey(hwndMain, HOTKEY_ID, MOD_WIN, 'V');
-        appState->nid = InitTrayIcon(hwndMain);
+        appState->nid = InitTrayIcon(hwndMain, GetModuleHandle(NULL));
         AddToHistory(appState->ClipHistory, GetSystemClipboardAsClipItem());
         appState->hwndHistDialog = CreateHistoryDialog(
             hwndMain,
@@ -559,6 +559,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
         NULL, NULL, hInstance, &appState
     );
     LOG_INFO(L"After CreateWindow");
+
+    HICON hIcon = (HICON)LoadIconW(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_APPICON));
+
+    // Set big icon (taskbar, Alt+Tab, etc.)
+    SendMessageW(hwndMain, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+
+    // Set small icon (title bar, top-left corner)
+    SendMessageW(hwndMain, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 
     appState.hwndMain = hwndMain;
     ShowWindow(hwndMain, SW_HIDE);
@@ -880,7 +888,26 @@ vector<unsigned char> BuildShellIDList(const wchar_t *pFileList)
         // Supposedly the old headers (XP or previous) are wrong and
         // the next call is right. Change the .h directly if necessary
         if (SUCCEEDED(SHParseDisplayName(p, NULL, &pidl, 0, &eaten)) && pidl)
+        {
             pidls.push_back(pidl);
+        }
+        else
+        {
+            // File probably cut/deleted. Create a synthetic PIDL with just the display name
+            IShellFolder *desktop = NULL;
+            if (SUCCEEDED(SHGetDesktopFolder(&desktop)) && desktop)
+            {
+                WCHAR name[MAX_PATH] = {0};
+                wcsncpy(name, p, MAX_PATH - 1);
+                // Use desktop->ParseDisplayName with a fake file name
+                LPITEMIDLIST fakePidl = NULL;
+                ULONG eatenFake = 0;
+                desktop->ParseDisplayName(NULL, NULL, name, &eatenFake, &fakePidl, NULL);
+                if (fakePidl)
+                    pidls.push_back(fakePidl);
+                desktop->Release();
+            }
+        }
     }
 
     if (pidls.empty())
@@ -1091,7 +1118,7 @@ void InitClipboardAPI()
 
 // ##### TrayIcon (Little Taskbar Icon) #####
 
-NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
+NOTIFYICONDATAW InitTrayIcon(HWND hwndMain, HINSTANCE hInstance)
 {
     NOTIFYICONDATAW nid;
     LOG_INFO(L"Init Tray Icon START");
@@ -1100,7 +1127,7 @@ NOTIFYICONDATAW InitTrayIcon(HWND hwndMain)
     nid.uID = 1;
     nid.uFlags = NIF_ICON | NIF_TIP | NIF_MESSAGE;
     nid.uCallbackMessage = WM_TRAY_ICON_CLICK;
-    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCEW(IDI_APPICON));
     wcsncpy(nid.szTip, L"Historial de Portapapeles", ARRAY_LENGTH(nid.szTip));
     Shell_NotifyIconW(NIM_ADD, &nid);
     LOG_INFO(L"Init Tray Icon END");
