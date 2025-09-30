@@ -36,12 +36,13 @@ using std::wostringstream;
 #include "Logger.h"
 #include "EvictingQueue.h"
 #include "ClipItem.h"
+#include "resource_ids.h"
 
 
-#define ForEachClipItem(container)                               \
-    for (deque<ClipItem>::const_iterator it = container.begin(); \
-         it != container.end();                                  \
-         ++it)
+#define ForEachClipItem(it_var, container)                           \
+    for (deque<ClipItem>::const_iterator it_var = container.begin(); \
+         it_var != container.end();                                  \
+         ++it_var)
 
 
 #ifndef WM_CLIPBOARDUPDATE
@@ -61,13 +62,34 @@ static const UINT APP_HEIGHT = 300;
 static const UINT LINE_HEIGHT = 18;
 static const ClipItem CLIP_ITEM_EMPTY;
 
+static const ClipItem::Type CLIP_ITEM_TYPES[] = {
+    /*  POSIBLY MODIFY ForEachValidClipItemType IF YOU MODIFY THIS *****/
+    ClipItem::TYPE_TEXT,
+    ClipItem::TYPE_HTML,
+    ClipItem::TYPE_IMAGE,
+    ClipItem::TYPE_FILE,
+};
+static const int CLIP_ITEM_ICONS[] = {
+    IDI_PLAIN,
+    IDI_FORMATTED,
+    IDI_IMAGE,
+    IDI_FILE,
+};
+static const size_t NUM_TYPES = ARRAY_LENGTH(CLIP_ITEM_TYPES);
+#define ForEachValidClipItemType(it_var)                 \
+    for (ClipItem::Type it_var = ClipItem::TYPE_TEXT;    \
+        it_var <  NUM_TYPES;                            \
+        it_var = static_cast<ClipItem::Type>(it_var + 1))
+
+
 struct AppState {
     HWND hwndMain;
-    HWND hNextViewer;
+    HWND hXPNextViewer;
     HWND hwndHistDialog;
     NOTIFYICONDATAW nid;
     EvictingQueue<ClipItem> ClipHistory;
     HWND hwndPrevWindow;
+    HICON hIcons[NUM_TYPES];
 };
 
 /***************************************************************/
@@ -79,7 +101,8 @@ string VectorToString(const vector<unsigned char> &v);
 wstring VectorToWstring(const vector<unsigned char> &v);
 size_t StringSizeInBytes(const string &str);
 size_t WstringSizeInBytes(const wstring &str);
-wstring IntToString(long a);
+wstring IntToWstring(long a);
+HICON GetIcon(HICON hIcons[NUM_TYPES], ClipItem::Type type);
 
 // Pointers to functions that will be set at runtime
 typedef BOOL (WINAPI *PFN_FormatListenerManager)(HWND);
@@ -138,7 +161,7 @@ void RemoveTrayIcon(NOTIFYICONDATAW &nid);
 void PrintHistory(wstring msg, EvictingQueue<ClipItem> &ClipHistory)
 {
     LOG_INFO(msg);
-    ForEachClipItem(ClipHistory)
+    ForEachClipItem(it, ClipHistory)
     {
         wstring p = L"- ";
         switch (it->type)
@@ -187,12 +210,19 @@ size_t WstringSizeInBytes(const wstring &str)
     return (str.length() + 1) * sizeof(wchar_t);
 }
 
-wstring IntToString(long n)
+wstring IntToWstring(long n)
 {
     wostringstream oss;
     oss << n;
     wstring str = oss.str();
     return str;
+}
+
+HICON GetIcon(HICON hIcons[NUM_TYPES], ClipItem::Type type)
+{
+    if (type >= 0 && type < NUM_TYPES)
+        return hIcons[type];
+    throw std::logic_error("ClipItem::type without icon");
 }
 
 // ##### WinApi Window Procedures #####
@@ -207,7 +237,7 @@ LRESULT CALLBACK HistoryDialogProc(
 )
 {
     AppState *appState = reinterpret_cast<AppState *>(dwRefData);
-    LOG_INFO(wstring(L"HistoryDialogProc ") + IntToString(msg));
+    LOG_INFO(wstring(L"HistoryDialogProc ") + IntToWstring(msg));
 
     switch (msg)
     {
@@ -264,8 +294,8 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
          GetWindowLongPtr(hwndMain, GWLP_USERDATA)
     );
 
-    LOG_INFO(L"WndProc " + IntToString(msg));
-    LOG_INFO(L"AppState address: " + IntToString(reinterpret_cast<long>(appState)));
+    LOG_INFO(L"WndProc " + IntToWstring(msg));
+    LOG_INFO(L"AppState address: " + IntToWstring(reinterpret_cast<long>(appState)));
 
     switch(msg)
     {
@@ -297,7 +327,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         else
         {
             LOG_INFO(L"Windows XP- listener");
-            appState->hNextViewer = SetClipboardViewer(hwndMain);
+            appState->hXPNextViewer = SetClipboardViewer(hwndMain);
         }
 
         RegisterHotKey(hwndMain, HOTKEY_ID, MOD_WIN, 'V');
@@ -322,18 +352,18 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         PrintHistory(L"Clipboard Update ater adding", appState->ClipHistory);
 
         UpdateHistoryDialog(appState->hwndHistDialog, appState->ClipHistory);
-        if (msg == WM_DRAWCLIPBOARD && appState->hNextViewer)
-            SendMessageW(appState->hNextViewer, msg, wParam, lParam);
+        if (msg == WM_DRAWCLIPBOARD && appState->hXPNextViewer)
+            SendMessageW(appState->hXPNextViewer, msg, wParam, lParam);
 
         break;
     }
 
     case WM_CHANGECBCHAIN:
         LOG_INFO(L"WM_CHANGECBCHAIN");
-        if (reinterpret_cast<HWND>(wParam) == appState->hNextViewer)
-            appState->hNextViewer = (HWND)lParam;
-        else if (appState->hNextViewer)
-            SendMessageW(appState->hNextViewer, msg, wParam, lParam);
+        if (reinterpret_cast<HWND>(wParam) == appState->hXPNextViewer)
+            appState->hXPNextViewer = (HWND)lParam;
+        else if (appState->hXPNextViewer)
+            SendMessageW(appState->hXPNextViewer, msg, wParam, lParam);
         break;
 
     case WM_HOTKEY:
@@ -392,14 +422,42 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
                 SendMessageW(appState->hwndHistDialog, LB_GETITEMDATA, dis->itemID, 0)
             );
 
-            // Draw "icon" (just a colored square)
-            HBRUSH hBrush = CreateSolidBrush(type == ClipItem::TYPE_TEXT ? RGB(0, 128, 255) : RGB(0, 200, 0));
+            // Rectangle size will be LINE_HEIGHT minus one pixel on each side
+            // Minus two pixels when counting both sides
             RECT rcIcon = dis->rcItem;
-            rcIcon.right = rcIcon.left + 12;
-            rcIcon.top += 2;
-            rcIcon.bottom -= 2;
-            FillRect(dis->hDC, &rcIcon, hBrush);
-            DeleteObject(hBrush);
+            rcIcon.left += 1;
+            rcIcon.right = rcIcon.left + (LINE_HEIGHT - 2);
+            rcIcon.top += 1;
+            rcIcon.bottom -= 1;
+
+            HICON hbmIcon = GetIcon(appState->hIcons, type);
+
+            if (hbmIcon)
+            {
+                DrawIconEx(
+                    dis->hDC,
+                    rcIcon.left, rcIcon.top,
+                    hbmIcon,
+                    rcIcon.right - rcIcon.left, rcIcon.bottom - rcIcon.top,
+                    0, NULL, DI_NORMAL);
+            }
+            else
+            {
+                // Fallback: Draw "icon" (just a colored square)
+                COLORREF color;
+                switch ((ClipItem::Type)dis->itemData) {
+                case ClipItem::TYPE_TEXT:  color = RGB(160, 160, 160); break;
+                case ClipItem::TYPE_HTML:  color = RGB(39, 154, 243);  break;
+                case ClipItem::TYPE_IMAGE: color = RGB(48, 160, 0);    break;
+                case ClipItem::TYPE_FILE:  color = RGB(200, 120, 0);   break;
+                default: throw std::logic_error("No color for Empty type"); break;
+                }
+
+                HBRUSH hBrush = CreateSolidBrush(color);
+
+                FillRect(dis->hDC, &rcIcon, hBrush);
+                DeleteObject(hBrush);
+            }
 
             // Get text
             wchar_t buffer[256];
@@ -412,7 +470,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
                          ? GetSysColor(COLOR_HIGHLIGHTTEXT)
                          : GetSysColor(COLOR_WINDOWTEXT));
             RECT rcText = dis->rcItem;
-            rcText.left += 16; // space after icon
+            rcText.left += LINE_HEIGHT; // space after icon
             DrawTextW(dis->hDC, buffer, -1, &rcText, DT_LEFT | DT_VCENTER | DT_SINGLELINE);
         }
         return TRUE;
@@ -431,7 +489,7 @@ LRESULT CALLBACK WndProc(HWND hwndMain, UINT msg, WPARAM wParam, LPARAM lParam)
         if (pRemoveClipboardFormatListener)
             pRemoveClipboardFormatListener(hwndMain);
         else
-            ChangeClipboardChain(hwndMain, appState->hNextViewer);
+            ChangeClipboardChain(hwndMain, appState->hXPNextViewer);
 
         RemoveTrayIcon(appState->nid);
         PostQuitMessage(0);
@@ -460,13 +518,37 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     Logger::instance().setConsoleLogLevel(Logger::INFO);
 
     AppState appState = {
-        NULL,
-        NULL,
-        NULL,
-        {},
-        EvictingQueue<ClipItem>(DEFAULT_CLIPBOARD_HISTORY_SIZE),
-        0
+        NULL, // hwndMain
+        NULL, // hXPNextViewer
+        NULL, // hwndHistDialog
+        {}, // nid
+        EvictingQueue<ClipItem>(DEFAULT_CLIPBOARD_HISTORY_SIZE), // ClipHistory
+        0, // hwndPrevWindow
+        {} // hIcons
     };
+
+    LOG_INFO(L"Loading ClipItem Icons");
+    ForEachValidClipItemType(i)
+    {
+        HICON icon = (HICON)LoadImageW(
+            GetModuleHandle(NULL),
+            MAKEINTRESOURCEW(CLIP_ITEM_ICONS[i]),
+            IMAGE_ICON,
+            0, 0,
+            LR_DEFAULTCOLOR
+        );
+        if (!icon)
+        {
+            DWORD err = GetLastError();
+            wchar_t buf[256];
+            wsprintfW(buf, L"LoadImageW failed. Error code: %lu", err);
+            MessageBoxW(NULL, buf, L"Error", MB_OK | MB_ICONERROR);
+        }
+        else
+        {
+            appState.hIcons[i] = icon;
+        }
+    }
 
     LOG_INFO(L"Before CreateWindow");
     HWND hwndMain = CreateWindowEx(
@@ -894,7 +976,7 @@ void UpdateHistoryDialog(HWND hwndHistDialog, const EvictingQueue<ClipItem> &Cli
 
     SendMessageW(hwndHistDialog, LB_RESETCONTENT, 0, 0);
 
-    ForEachClipItem(ClipHistory)
+    ForEachClipItem(it, ClipHistory)
     {
         int idx = SendMessageW(
             hwndHistDialog,

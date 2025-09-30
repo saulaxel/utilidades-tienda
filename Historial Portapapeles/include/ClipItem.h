@@ -14,11 +14,11 @@ using std::vector;
 struct ClipItem
 {
     enum Type {
-        TYPE_NONE,
         TYPE_TEXT,  // Unicode text
         TYPE_HTML,  // Enriched text (HTML)
         TYPE_FILE,  // List of files
         TYPE_IMAGE, // Binary image data
+        TYPE_NONE,
     } type;
 
     string html;

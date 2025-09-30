@@ -14,7 +14,7 @@
 	"EvictingQueue.h"
 	"ClipItem.h"
 
-1759122522 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
+1759201211 source:e:\repositorios\utilidades-tienda\historial portapapeles\main.cpp
 	<windows.h>
 	<shellapi.h>
 	<tchar.h>
@@ -28,12 +28,13 @@
 	"Logger.h"
 	"EvictingQueue.h"
 	"ClipItem.h"
+	"resource_ids.h"
 
 1758852576 e:\repositorios\utilidades-tienda\historial portapapeles\include\evictingqueue.h
 	<deque>
 	<stdexcept>
 
-1759123459 e:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
+1759177953 e:\repositorios\utilidades-tienda\historial portapapeles\include\clipitem.h
 	<string>
 	<vector>
 	<stdexcept>
@@ -64,4 +65,8 @@
 	<iostream>
 	<fstream>
 	<string>
+
+1759200423 e:\repositorios\utilidades-tienda\historial portapapeles\resource_ids.h
+
+1759200935 source:e:\repositorios\utilidades-tienda\historial portapapeles\resource.rc
 

@@ -1,0 +1,11 @@
+// Resource IDs
+#define IDI_PLAIN     101
+#define IDI_FORMATTED 102
+#define IDI_IMAGE     103
+#define IDI_FILE      104
+
+// Embed the bitmaps or icons
+IDI_PLAIN     ICON    "icon_plain_text.ico"
+IDI_FORMATTED ICON    "icon_formatted_text.ico"
+IDI_IMAGE     ICON    "icon_image.ico"
+IDI_FILE      ICON    "icon_file.ico"
