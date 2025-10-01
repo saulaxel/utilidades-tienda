@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Enfocar Tab Duplicada",
+    "version": "1.0",
+    "description": "Al abrir una pestaña en un sitio web que ya está abierto, se enfoca la pestaña existente.",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ]
+}

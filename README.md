@@ -38,6 +38,11 @@ Una vez que se instale esta extensión, se requiere que el usuario escriba su Pu
 
 ## Historial Portapapeles
 
-Applicación que busca proveer parte de la funcionalidad de Windows 10 en Windows previos.
+Aplicación que busca proveer parte de la funcionalidad de Windows 10 en Windows previos.
 
 Iniciar la aplicación para que empiece a guardar una lista de lo que copias. Presionar Windows + V para abrir el historial y pegar el objeto que elijas.
+
+## Enfocar Tab Duplicada
+
+Evita tab duplicadas para las páginas que le indiques. Útil en página de servicio como Whatsapp Web y Movivendor. Si tratas de abrir una de estas páginas cuando ya hay una tab abierta, te redirige a la existente y cierra la nueva.
+
