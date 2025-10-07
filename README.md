@@ -24,7 +24,8 @@ Disponible como:
 
 ## Inicio Sesión Movivendor
 
-Realiza el proceso de inicio de sesión en Movivendor de forma automática, ahorrando el paso de escribir los datos a mano.
+Escribe los datos de inicio de sesión en movivendor para ahorrar tiempo. Para
+este fin se guarda tu cuenta en el almacenamiento local.
 
 
 Disponible como:

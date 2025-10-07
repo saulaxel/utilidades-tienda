@@ -32,25 +32,13 @@ const autocompletarPuntoDeVenta = (strPuntoDeVenta) => {
     puntoDeVenta.value = strPuntoDeVenta;
 };
 
-const presionarLogIn = () => {
-    const botonLogIn = document.getElementById("logIn");
-
-    if (!botonLogIn)
-        return;
-
-    botonLogIn.click();
-};
-
 obtenerPuntoVenta().then(strPuntoDeVenta => {
     const procesoLogin = () => {
         // strPuntoDeVenta como "closure" permite usar esta función como event
         // callback. Esta función anidada existe por esa misma razon
         autocompletarPuntoDeVenta(strPuntoDeVenta);
 
-        if (strPuntoDeVenta.length == 10) {
-            setTimeout(presionarLogIn, 500);
-            registrarObservadorDOM();
-        }
+        registrarObservadorDOM();
     };
 
     if (document.readyState === "loading") {
@@ -61,13 +49,13 @@ obtenerPuntoVenta().then(strPuntoDeVenta => {
 });
 
 // #####
-// Paso 2. Volver a presionar login cuando aparezca el campo para la contraseña
+// Paso 2. Enfocar el campo de contraseña
 // #####
 const registrarObservadorDOM = (_, obs) => {
     const observadorDOM = new MutationObserver((_, obs) => {
         const pass = document.getElementById("in-password");
         if (pass) {
-            presionarLogIn();
+            pass.focus();
             obs.disconnect();
         }
     });
