@@ -6,7 +6,9 @@ browser.storage.local.get('puntoDeVenta').then(data => {
     }
 });
 
-document.getElementById('botonGuardar').addEventListener('click', () => {
+document.getElementById('opciones').addEventListener('submit', (e) => {
+    e.preventDefault();
+
     const intPuntoDeVenta = parseInt(document.getElementById('puntoDeVenta').value, 10);
     const estadoGuardado = document.getElementById("estado-guardado");
 

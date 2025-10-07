@@ -8,10 +8,12 @@
 <body>
     <div class="container">
         <h1>Configuración de la Extensión</h1>
-        <label for="puntoDeVenta">Punto de venta (Tu número)</label>
-        <input type="tel" id="puntoDeVenta" placeholder="55...">
+        <form id="opciones">
+            <label for="puntoDeVenta">Punto de venta (Tu número)</label>
+            <input type="tel" id="puntoDeVenta" placeholder="55...">
+            <button type="submit" id="botonGuardar">Guardar</button>
+        </form>
 
-        <button id="botonGuardar">Guardar</button>
 
         <div id="estado-guardado"></div>
     </div>

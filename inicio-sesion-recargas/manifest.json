@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Inicio de Sesión Recargas",
-    "version": "1.3",
+    "version": "1.4",
     "description": "Facilita el inicio de sesión llenando automáticamente tu cuenta.",
     "content_scripts": [
         {
