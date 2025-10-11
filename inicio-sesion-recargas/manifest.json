@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Inicio de Sesión Recargas",
-    "version": "1.2",
+    "version": "1.4",
     "description": "Facilita el inicio de sesión llenando automáticamente tu cuenta.",
     "content_scripts": [
         {
@@ -19,5 +19,13 @@
     ],
     "host_permissions": [
         "https://web.movivendor.com/login"
-    ]
+    ],
+    "data_collection_permissions": {
+        "collects_data": false
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{794dae10-ad39-4e90-8726-5951722c2322}"
+        }
+    }
 }

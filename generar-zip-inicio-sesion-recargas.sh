@@ -1,2 +1,3 @@
 #!/bin/bash
-zip -j -r Output/inicio-sesion-recargas.zip inicio-sesion-recargas/*
+SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)"
+zip -j -r $SCRIPT_PATH/Output/inicio-sesion-recargas.zip $SCRIPT_PATH/inicio-sesion-recargas/*
