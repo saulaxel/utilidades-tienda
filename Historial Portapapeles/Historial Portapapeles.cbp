@@ -26,6 +26,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Iinclude" />
+					<Add option="-DNDEBUG" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
