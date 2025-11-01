@@ -13,7 +13,7 @@ function saveOptions() {
 
 function loadOptions() {
     browser.storage.local.get("hosts").then(result => {
-        const hosts = result.hosts || ["web.whatsapp.com"];
+        const hosts = result.hosts || [];
         document.getElementById("hosts").value = hosts.join("\n");
     });
 }
