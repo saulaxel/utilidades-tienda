@@ -14,6 +14,10 @@
   #define END_SUPPRESS_WARNING
 #endif
 
+#ifndef ALLOW_FILE
+#define ALLOW_FILE 0
+#endif // ALLOW_FILE
+
 #define _WIN32_WINNT 0x0501 // To use INPUT and simulate typing
 #include <windows.h>
 #include <shellapi.h>
@@ -515,7 +519,13 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     RegisterClass(&wc);
 
     Logger::instance().enableFileLogging(true);
-    Logger::instance().setConsoleLogLevel(Logger::INFO);
+
+#ifdef NDEBUG
+    Logger::instance().setConsoleLogLevel(Logger::LERROR);
+#else
+    Logger::instance().setConsoleLogLevel(Logger::DEBUG);
+#endif
+
 
     AppState appState = {
         NULL, // hwndMain
@@ -665,6 +675,8 @@ ClipItem GetSystemClipboardAsClipItem()
     }
     else if (IsClipboardFormatAvailable(CF_HDROP))
     {
+        if (!ALLOW_FILE)
+            return CLIP_ITEM_EMPTY;
         format = CF_HDROP;
     }
     else
@@ -742,6 +754,9 @@ bool SetSystemClipboardData(const void *pData, size_t size, UINT format)
 bool SetSystemClipboardToClipItem(const ClipItem &item)
 {
     if (item.type == ClipItem::TYPE_NONE)
+        return false;
+
+    if (!ALLOW_FILE && item.type == ClipItem::TYPE_FILE)
         return false;
 
     if (!OpenClipboard(NULL))
