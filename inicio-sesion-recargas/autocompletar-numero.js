@@ -1,67 +1,116 @@
-// La forma en que el sitio web funciona actualmente es la siguiente:
-// - Aparece un input para escribir el puntoDeVenta y hay que presionar logIn.
-//   La página procede a comprobar que el puntoDeVenta sea válido y, en caso de serlo,
-//   procede al siguiente punto.
-// - El input para puntoDeVenta desaparece y en su lugar aparece un input para la contraseña.
-//   Dicha contraseña suele aparecer ya rellenada por el navegador, por lo que no hace falta escribirla.
-//   Lo que sí falta hacer es volver a presionar logIn. Esperar un tiempo fijo no parece muy efectivo, por lo
-//   que en su lugar se usa un MutationObserver para identificar cuando aparece el campo para la contraseña
+(() => {
+    "use strict";
 
-console.log('autocompletar-numero');
+    console.log("[autocompletar] script cargado");
 
-// #####
-// Paso 1, obtener el puntoDeVenta almacenado en firefox y escribirlo en el campo puntoDeVenta
-// #####
-async function obtenerPuntoVenta() {
-    // Wait for storage values to load
-    const data = await browser.storage.local.get(["puntoDeVenta"]);
+    // =========================
+    // Configuración / constantes
+    // =========================
 
-    if (typeof data.puntoDeVenta === "undefined") {
-        return "55";
-    }
+    const DEFAULT_PUNTO_VENTA = "55";
+    const ID_INPUT_PUNTO_VENTA = "in-puntoVenta";
+    const ID_INPUT_PASSWORD = "in-password";
 
-    return data.puntoDeVenta;
-}
+    // =========================
+    // Storage
+    // =========================
 
-const autocompletarPuntoDeVenta = (strPuntoDeVenta) => {
-    const puntoDeVenta = document.getElementById("in-puntoVenta");
-
-    if (!puntoDeVenta)
-        return;
-
-    puntoDeVenta.value = strPuntoDeVenta;
-};
-
-obtenerPuntoVenta().then(strPuntoDeVenta => {
-    const procesoLogin = () => {
-        // strPuntoDeVenta como "closure" permite usar esta función como event
-        // callback. Esta función anidada existe por esa misma razon
-        autocompletarPuntoDeVenta(strPuntoDeVenta);
-
-        registrarObservadorDOM();
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", procesoLogin);
-    } else {
-        procesoLogin();
-    }
-});
-
-// #####
-// Paso 2. Enfocar el campo de contraseña
-// #####
-const registrarObservadorDOM = (_, obs) => {
-    const observadorDOM = new MutationObserver((_, obs) => {
-        const pass = document.getElementById("in-password");
-        if (pass) {
-            pass.focus();
-            obs.disconnect();
+    async function obtenerPuntoDeVenta() {
+        try {
+            const { puntoDeVenta } = await browser.storage.local.get("puntoDeVenta");
+            return puntoDeVenta ?? DEFAULT_PUNTO_VENTA;
+        } catch (err) {
+            console.warn("[autocompletar] error leyendo storage", err);
+            return DEFAULT_PUNTO_VENTA;
         }
-    });
+    }
 
-    observadorDOM.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-};
+    // =========================
+    // DOM helpers
+    // =========================
+
+    function obtenerInputPuntoDeVenta() {
+        return document.getElementById(ID_INPUT_PUNTO_VENTA);
+    }
+
+    function obtenerInputPassword() {
+        return document.getElementById(ID_INPUT_PASSWORD);
+    }
+
+    // =========================
+    // Paso 1: Autocompletar punto de venta
+    // =========================
+
+    async function autocompletarPuntoDeVenta() {
+        const input = obtenerInputPuntoDeVenta();
+        if (!input) {
+            console.debug("[autocompletar] input puntoDeVenta no encontrado");
+            return;
+        }
+
+        const puntoDeVenta = await obtenerPuntoDeVenta();
+        input.value = puntoDeVenta;
+
+        // El estado de la app no se actualiza en automático
+        // El siguiente código le informa de los cambios
+        input.dispatchEvent(new InputEvent("input", {
+          bubbles: true
+        }));
+
+        input.dispatchEvent(new Event("change", {
+          bubbles: true
+        }));
+
+        console.debug("[autocompletar] puntoDeVenta aplicado:", puntoDeVenta);
+    }
+
+    // =========================
+    // Paso 2: Enfocar password cuando aparezca
+    // =========================
+
+    function observarCampoPassword() {
+        const existente = obtenerInputPassword();
+        if (existente) {
+            existente.focus();
+            return;
+        }
+
+        const observer = new MutationObserver(() => {
+            const pass = obtenerInputPassword();
+            if (pass) {
+                pass.focus();
+                observer.disconnect();
+                console.debug("[autocompletar] campo password enfocado");
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    // =========================
+    // Orquestador principal
+    // =========================
+
+    async function ejecutarProcesoLogin() {
+        await autocompletarPuntoDeVenta();
+        observarCampoPassword();
+    }
+
+    // =========================
+    // Auto-ejecución al cargar
+    // =========================
+
+    function iniciarAutomaticamente() {
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", ejecutarProcesoLogin, { once: true });
+        } else {
+            ejecutarProcesoLogin();
+        }
+    }
+
+    iniciarAutomaticamente();
+
+})();
