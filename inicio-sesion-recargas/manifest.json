@@ -35,6 +35,10 @@
         "https://web.movivendor.com/login"
     ],
 
+    "data_collection_permissions": {
+        "collects_data": false
+    },
+
     "browser_specific_settings": {
         "gecko": {
             "id": "{794dae10-ad39-4e90-8726-5951722c2322}"
